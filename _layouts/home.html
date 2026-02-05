@@ -21,7 +21,7 @@ layout: default
       <h2 class="series__title">The Prince Martin Epic Series</h2>
       <p class="series__description">Illustrated chapter book series that turn boys into readers.</p>
       <div class="books-index">
-        {% assign epic_books = site.data.books | where: "series", "picture" | sort: "book_number" %}
+        {% assign epic_books = site.data.books | where: "series", "epic" | sort: "book_number" %}
         {% for book in epic_books %}
         <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
           <img src="{{ book.cover }}" alt="{{ book.cover_alt }}" loading="lazy">
