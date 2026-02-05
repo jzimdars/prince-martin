@@ -6,12 +6,9 @@ cd "$root_dir"
 
 bin/build
 
-if [[ ! -f CNAME ]]; then
-  echo "CNAME file missing at repo root." >&2
-  exit 1
+if [[ -f CNAME ]]; then
+  cp CNAME _site/CNAME
 fi
-
-cp CNAME _site/CNAME
 
 worktree_dir=".worktrees/gh-pages"
 
@@ -23,8 +20,7 @@ if [[ ! -d "$worktree_dir" ]]; then
   fi
 fi
 
-rm -rf "$worktree_dir"/*
-rsync -a --delete _site/ "$worktree_dir"/
+rsync -a --delete --exclude .git _site/ "$worktree_dir"/
 
 pushd "$worktree_dir" >/dev/null
 if [[ -n "$(git status --porcelain)" ]]; then
