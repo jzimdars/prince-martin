@@ -8,3 +8,5 @@ Princemartin.com website
    - `bin/dev`
 3. Build the site:
    - `bin/build`
+4. Deploy to GitHub Pages:
+   - `bin/deploy`
