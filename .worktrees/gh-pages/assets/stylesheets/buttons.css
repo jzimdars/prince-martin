@@ -1,0 +1,48 @@
+@layer modules {
+  .btn {
+    --btn-hover-brightness: 0.9;
+
+    align-items: center;
+    background-color: var(--btn-background, var(--color-ink-inverted));
+    border-radius: var(--btn-border-radius, 99rem);
+    border: var(--btn-border-size, 1px) solid var(--btn-border-color, var(--color-ink-light));
+    color: var(--btn-color, var(--color-ink));
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--font-sans);
+    font-size: 1em;
+    font-weight: var(--btn-font-weight, 600);
+    gap: var(--btn-gap, 0.5em);
+    justify-content: center;
+    padding: var(--btn-padding, 0.5em 1.1em);
+    pointer-events: auto;
+    position: relative;
+    transition: 100ms ease-out;
+    transition-property: background-color, border, box-shadow, color, filter, opacity, scale;
+
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(var(--btn-hover-brightness));
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      --btn-hover-brightness: 1.25;
+    }
+  }
+
+  .btn--link {
+    --btn-background: var(--color-link);
+    --btn-border-color: var(--color-canvas);
+    --btn-color: var(--color-ink-inverted);
+    --focus-ring-color: var(--color-link);
+  }
+
+  .btn--plain {
+    --btn-background: transparent;
+    --btn-border-radius: 0;
+    --btn-border-size: 0;
+    --btn-color: inherit;
+    --btn-padding: 0;
+  }
+}

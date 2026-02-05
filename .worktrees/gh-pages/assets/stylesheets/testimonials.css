@@ -1,0 +1,42 @@
+@layer modules {
+  .testimonials {
+    background: linear-gradient(-33deg, oklch(var(--lch-lime-light)), oklch(var(--lch-lime-lightest)));
+    border-block-start: 0.5em solid oklch(var(--lch-lime-dark));
+    padding: var(--space-double);
+  }
+
+  .testimonials__wrap {
+    columns: 35ch 3;
+    column-gap: var(--space-double);
+    text-align: start;
+  }
+
+  .testimonial {
+    break-inside: avoid-column;
+  
+    blockquote {
+      font-size: 1.3em;
+      margin: 0;
+      padding: 0;
+
+      &::after {
+        content: "”";
+      }
+
+      &::before {
+        content: "“";
+      }
+    }
+
+    cite {
+      color: oklch(var(--lch-lime-dark));
+      display: block;
+      font-style: normal;
+      padding: var(--space-half) var(--space) var(--space-double);
+
+      &:before {
+        content: " — ";
+      }
+    }
+  }
+}
