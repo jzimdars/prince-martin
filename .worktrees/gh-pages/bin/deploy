@@ -6,12 +6,12 @@ cd "$root_dir"
 
 bin/build
 
-if [[ ! -f CNAME ]]; then
-  echo "CNAME file missing at repo root." >&2
-  exit 1
-fi
+# if [[ ! -f CNAME ]]; then
+#   echo "CNAME file missing at repo root." >&2
+#   exit 1
+# fi
 
-cp CNAME _site/CNAME
+# cp CNAME _site/CNAME
 
 worktree_dir=".worktrees/gh-pages"
 
