@@ -25,9 +25,17 @@ layout: default
           <div class="book__gallery-item">
             <button class="btn btn--plain" popovertarget="{{ item.id }}"><img src="{{ item.thumb }}" alt=""></button>
             <div id="{{ item.id }}" popover>
+              {% if item.video %}
+              <div class="book__gallery-video">
+                <video controls playsinline preload="metadata">
+                  <source src="{{ item.video }}">
+                </video>
+              </div>
+              {% else %}
               <button class="btn btn--plain" popovertarget="{{ item.id }}" popovertargetaction="hide">
                 <img src="{{ item.image }}" alt="">
               </button>
+              {% endif %}
             </div>
           </div>
           {% endfor %}
