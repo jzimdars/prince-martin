@@ -1,0 +1,227 @@
+@layer reset, base, components, modules, utilities, native, platform;
+
+:root {
+  /* Spacing */
+  --space: 1rem;
+  --space-half: calc(var(--space) / 2);
+  --space-double: calc(var(--space) * 2);
+
+  /* Text */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-mono: ui-monospace, monospace;
+
+  --text-xx-small: 0.55rem;
+  --text-x-small: 0.75rem;
+  --text-small: 0.85rem;
+  --text-normal: 1rem;
+  --text-medium: 1.1rem;
+  --text-large: 1.5rem;
+  --text-x-large: 1.8rem;
+  --text-xx-large: 2.5rem;
+
+  @media (max-inline-size: 639px) {
+    --text-xx-small: 0.65rem;
+    --text-x-small: 0.85rem;
+    --text-small: 0.95rem;
+    --text-normal: 1.1rem;
+    --text-medium: 1.2rem;
+    --text-large: 1.5rem;
+    --text-x-large: 1.8rem;
+    --text-xx-large: 2.5rem;
+  }
+
+  /* Borders */
+  --border: 1px solid var(--color-ink-lighter);
+
+  /* Shadows */
+  --shadow: 0 0 0 1px oklch(var(--lch-black) / 5%),
+            0 0.2em 0.2em oklch(var(--lch-black) / 5%),
+            0 0.4em 0.4em oklch(var(--lch-black) / 5%),
+            0 0.8em 0.8em oklch(var(--lch-black) / 5%);
+
+  /* Focus rings for keyboard navigation */
+  --focus-ring-color: var(--color-link);
+  --focus-ring-offset: 1px;
+  --focus-ring-size: 2px;
+  --focus-ring: var(--focus-ring-size) solid var(--focus-ring-color);
+
+  /* Layout */
+  --main-padding: clamp(var(--space), 3vw, calc(var(--space) * 3));
+  --main-inline-size: 1400px;
+
+  /* OKLCH colors: Fixed */
+  --lch-black: 0% 0 0;
+  --lch-white: 100% 0 0;
+
+  /* OKLCH colors: Light mode */
+  --lch-canvas: var(--lch-white);
+  --lch-ink: var(--lch-black);
+  --lch-ink-light: 84% 0.005 256;
+  --lch-ink-lighter: 92% 0.003 254;
+  --lch-ink-lightest: 96% 0.002 252;
+  --lch-ink-inverted: var(--lch-white);
+  --lch-blue-darkest: 26% 0.126 264;
+  --lch-blue-darker: 40% 0.166 262;
+  --lch-blue-dark: 57.02% 0.1895 260.46;
+  --lch-blue-medium: 66% 0.196 257.82;
+  --lch-blue-light: 84.04% 0.0719 255.29;
+  --lch-blue-lighter: 92% 0.026 254;
+  --lch-blue-lightest: 96% 0.016 252;
+  --lch-purple: 58% 0.21 310;
+  --lch-purple-light: 84.09% 0.0778 305.77;
+  --lch-purple-lighter: 92% 0.03 304;
+  --lch-purple-lightest: 96% 0.019 302;
+  --lch-lime-dark: 56.5% 0.142 111;
+  --lch-lime-medium: 68% 0.176 113.11;
+  --lch-lime-light: 83.92% 0.0927 113.6;
+  --lch-lime-lighter: 92% 0.046 114;
+  --lch-lime-lightest: 96% 0.034 115;
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    --lch-canvas: var(--lch-black);
+    --lch-ink: var(--lch-white);
+    --lch-ink-light: 40% 0.0148 260;
+    --lch-ink-lighter: 30% 0.0178 260;
+    --lch-ink-lightest: 25% 0.0204 260;
+    --lch-ink-inverted: var(--lch-black);
+
+    --lch-blue-dark: 74% 0.1293 256;
+    --lch-blue-medium: 62% 0.159 258;
+    --lch-blue-light: 40% 0.094 260;
+    --lch-blue-lighter: 30% 0.0452 262;
+    --lch-blue-lightest: 25% 0.0318 264;
+    --lch-purple: 73.98% 0.141 306;
+    --lch-purple-light: 40% 0.099 310;
+    --lch-purple-lighter: 30% 0.04 312;
+    --lch-purple-lightest: 25% 0.017 314;
+    --lch-lime-dark: 73.97% 0.121 113;
+    --lch-lime-medium: 62% 0.128 112;
+    --lch-lime-light: 40% 0.0637 111;
+    --lch-lime-lighter: 30% 0.024 110;
+    --lch-lime-lightest: 25% 0.012 109;
+  }
+
+  /* Colors: Abstractions */
+  --color-black: oklch(var(--lch-black));
+  --color-canvas: oklch(var(--lch-canvas));
+  --color-ink: oklch(var(--lch-ink));
+  --color-ink-light: oklch(var(--lch-ink-light));
+  --color-ink-lighter: oklch(var(--lch-ink-lighter));
+  --color-ink-lightest: oklch(var(--lch-ink-lightest));
+  --color-ink-inverted: oklch(var(--lch-ink-inverted));
+  --color-link: oklch(var(--lch-blue-dark));
+  --color-blue: oklch(var(--lch-blue-dark));
+  --color-blue-light: oklch(var(--lch-blue-light));
+  --color-blue-lighter: oklch(var(--lch-blue-lighter));
+  --color-blue-lightest: oklch(var(--lch-blue-lightest));
+  --color-purple: oklch(var(--lch-purple));
+  --color-purple-light: oklch(var(--lch-purple-light));
+  --color-purple-lighter: oklch(var(--lch-purple-lighter));
+  --color-purple-lightest: oklch(var(--lch-purple-lightest));
+}
+
+
+@layer base {
+  html {
+    font-size: 100%;
+
+    @media (min-inline-size: 100ch) {
+      font-size: 1.1875rem;
+    }
+  }
+
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-size: var(--text-medium);
+    interpolate-size: allow-keywords;
+    line-height: 1.375;
+    max-inline-size: 100vw;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: none;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:not([class]) {
+      color: var(--color-link);
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
+    }
+  }
+
+  p, li {
+    text-wrap: pretty;
+  }
+
+  h1, h2, h3, h4, h5 {
+    text-wrap: balance;
+  }
+
+  :is(a, button, input, textarea, .btn) {
+    transition: 100ms ease-out;
+    transition-property: background-color, border-color, box-shadow, filter, outline;
+    touch-action: manipulation;
+
+    /* Keyboard navigation */
+    &:where(:focus-visible) {
+      border-radius: 0.25ch;
+      outline: var(--focus-ring-size) solid var(--focus-ring-color);
+      outline-offset: var(--focus-ring-offset);
+    }
+
+    /* Default disabled styles */
+    &:where([disabled]) {
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  ::selection {
+    background: var(--color-selected);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-selected-dark);
+    }
+  }
+
+  :where(ul, ol):where([role="list"]) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  video {
+    max-inline-size: 100%;
+  }
+
+  /* Printing */
+  @page {
+    margin: 1in;
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
+
+  /* Nicer scrollbars on Chrome 29+. This is intended for Windows machines, but */
+  /* there's not a way to target Windows using CSS, so Chrome on Mac will have */
+  /* slightly thinner scrollbars than normal. #C1C1C1 is the default color on Macs. */
+  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    * {
+      scrollbar-color: #C1C1C1 transparent;
+      scrollbar-inline-size: thin;
+    }
+  }
+}

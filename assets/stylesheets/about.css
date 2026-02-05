@@ -1,0 +1,24 @@
+@layer modules {
+  .bios {
+    columns: 35ch 3;
+    column-gap: var(--space-double);
+    padding: var(--space-double) var(--space);
+    text-align: start;
+  }
+
+  .bio {
+    break-inside: avoid-column;
+    margin: 0;
+    padding: var(--space) 0;
+
+    img {
+      --size: 12rem;
+  
+      block-size: var(--size);
+      border-radius: 50%;
+      margin: 0 auto var(--space);
+      inline-size: var(--size);
+      object-fit: cover;
+    }
+  }
+}
