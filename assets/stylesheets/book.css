@@ -23,6 +23,10 @@
   }
 
   .book__description {
+    h2 {
+      line-height: 1.1;
+    }
+
     p {
       margin-bottom: 0.9rem;
     }
