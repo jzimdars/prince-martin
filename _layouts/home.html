@@ -19,9 +19,9 @@ layout: default
     <div class="container">
       <p class="series__kicker">7-book series of chapter books</p>
       <h2 class="series__title">The Prince Martin Epic Series</h2>
-      <p class="series__description">Illustrated chapter book series that turn boys into readers!.</p>
+      <p class="series__description">Illustrated chapter book series that turn boys into readers.</p>
       <div class="books-index">
-        {% assign epic_books = site.data.books | where: "series", "epic" | sort: "book_number" %}
+        {% assign epic_books = site.data.books | where: “series”, “epic” | sort: “book_number” %}
         {% for book in epic_books %}
         <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
           <img src="{{ book.cover }}" alt="{{ book.cover_alt }}" loading="lazy">
@@ -37,7 +37,7 @@ layout: default
     <h2 class="series__title">Little Prince Martin Picture Books</h2>
     <p class="series__description">Picture books for younger readers with playful rhymes, bold artwork, and brave hearts.</p>
     <div class="books-index" style="--cover-width: 280px">
-      {% assign picture_books = site.data.books | where: "series", "picture" | sort: "book_number" %}
+      {% assign picture_books = site.data.books | where: “series”, “picture” | sort: “book_number” %}
       {% for book in picture_books %}
       <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
         <img src="{{ book.cover }}" alt="{{ book.cover_alt }}">
@@ -52,39 +52,39 @@ layout: default
     <div class="testimonials__wrap" role="list">
       <article class="testimonial" role="listitem">
         <blockquote>Boyish, archetypal, cross-cultural, and timeless. Exactly what boys love and need...the Devil will tremble.</blockquote>
-        <cite>Peter Kreeft, Ph.D., best-selling author of "The Philosophy of Tolkien: The Worldview Behind The Lord of the Rings" and "C.S. Lewis for the Third Millennium."</cite>
+        <cite>Peter Kreeft, Ph.D., best-selling author of “The Philosophy of Tolkien: The Worldview Behind The Lord of the Rings” and “C.S. Lewis for the Third Millennium.”</cite>
       </article>
       <article class="testimonial" role="listitem">
-        <blockquote>Brilliant! Riveting! Heart-wrenching! Hopeful! Brandon Hale's delightful pen has once more crafted a story that will have you giggling, crying, and cheering as his endearing characters relay a tale rooted in solid truths certain to forge character and bravery into the youngest (and oldest) of hearts.</blockquote>
-        <cite>Jenny L. Cote, Award-Winning Author of "The Amazing Tales of Max and Liz" and the "Epic Order of the Seven" series.</cite>
+        <blockquote>Brilliant! Riveting! Heart-wrenching! Hopeful! Brandon Hale’s delightful pen has once more crafted a story that will have you giggling, crying, and cheering as his endearing characters relay a tale rooted in solid truths certain to forge character and bravery into the youngest (and oldest) of hearts.</blockquote>
+        <cite>Jenny L. Cote, Award-Winning Author of “The Amazing Tales of Max and Liz” and the “Epic Order of the Seven” series.</cite>
       </article>
       <article class="testimonial" role="listitem">
         <blockquote>As dads, Prince Martin and the Last Centaur is exactly the type of book we want our kids to be reading. Adventure-seeking boys, in particular, will love it.</blockquote>
-        <cite>Adam Minihan and David Niles, hosts of "The Catholic Man Show"</cite>
+        <cite>Adam Minihan and David Niles, hosts of “The Catholic Man Show”</cite>
       </article>
       <article class="testimonial" role="listitem">
         <blockquote>A rollicking good adventure that appeals to the heart and captures the imagination with vivid, virtue-based story telling. Both the young and the young-at-heart alike will enjoy this exuberant tale.</blockquote>
-        <cite>Patrick Madrid, host of the "Patrick Madrid Show" on Relevant Radio</cite>
+        <cite>Patrick Madrid, host of the “Patrick Madrid Show” on Relevant Radio</cite>
       </article>
       <article class="testimonial" role="listitem">
-        <blockquote>Brandon Hale and Jason Zimdars have done it again. In this fifth installment in their epic fantasy series named after its hero, Hale's poetic prose beats and rhymes with fine ballad-like effect on the ear. Zimdars' illustrations arrest the eye with vivid images of creatures winsome and horrible. And good defeats evil in surprisingly plotted ways. It's no easy, smarmy victory but one well-fought and grace-filled.</blockquote>
+        <blockquote>Brandon Hale and Jason Zimdars have done it again. In this fifth installment in their epic fantasy series named after its hero, Hale’s poetic prose beats and rhymes with fine ballad-like effect on the ear. Zimdars’ illustrations arrest the eye with vivid images of creatures winsome and horrible. And good defeats evil in surprisingly plotted ways. It’s no easy, smarmy victory but one well-fought and grace-filled.</blockquote>
         <cite>Ralph C. Wood, author of The Gospel According to Tolkien: Visions of the Kingdom in Middle-earth</cite>
       </article>
       <article class="testimonial" role="listitem">
-        <blockquote>Another riveting read in the Prince Martin series! Prince Martin and the Cave Bear is filled with themes that I want my children to ponder--hope amidst fear, protecting the vulnerable, fighting for justice... Every time we finish a Prince Martin story, we are already itching for another!</blockquote>
+        <blockquote>Another riveting read in the Prince Martin series! Prince Martin and the Cave Bear is filled with themes that I want my children to ponder—hope amidst fear, protecting the vulnerable, fighting for justice... Every time we finish a Prince Martin story, we are already itching for another!</blockquote>
         <cite>Katie Warner, Author & Editor of the FirstFaithTreasury.com series and A Parent Who Prays</cite>
       </article>
       <article class="testimonial" role="listitem">
-        <blockquote>Epic, timeless, and fun! As the mother of many sons, and now grandsons, I know how rare it is to find an adventurous book for boys set in a moral universe that projects virtue and right order. My youngest son grabbed Prince Martin and the Last Centaur and couldn't put it down.</blockquote>
-        <cite>Leila Miller, author of Raising Chaste Catholic Men, and Made This Way: How to Prepare Kids to Face Today's Tough Moral Issues (co-authored with Trent Horn)</cite>
+        <blockquote>Epic, timeless, and fun! As the mother of many sons, and now grandsons, I know how rare it is to find an adventurous book for boys set in a moral universe that projects virtue and right order. My youngest son grabbed Prince Martin and the Last Centaur and couldn’t put it down.</blockquote>
+        <cite>Leila Miller, author of Raising Chaste Catholic Men, and Made This Way: How to Prepare Kids to Face Today’s Tough Moral Issues (co-authored with Trent Horn)</cite>
       </article>
       <article class="testimonial" role="listitem">
         <blockquote>A tale of courage and kindness with a little silliness thrown in. An exciting bedtime story, cleverly written.</blockquote>
         <cite>Wayne Grant, best-selling author of the Roland Inness Saga</cite>
       </article>
       <article class="testimonial" role="listitem">
-        <blockquote>The great G.K. Chesterton remarked that 'Fairy tales do not tell children the dragons exist. Children already know that dragons exist. Fairy tales tell children the dragons can be killed.' Brandon Hale does children the evergreen favor of providing adventures in which we learn the simple truth that dragons can be killed, heroism and courage are rewarded, and love and goodness triumph against wickedness.</blockquote>
-        <cite>Mark Shea, popular blogger and co-author of the New York Times bestseller "A Guide to the Passion."</cite>
+        <blockquote>The great G.K. Chesterton remarked that ‘Fairy tales do not tell children the dragons exist. Children already know that dragons exist. Fairy tales tell children the dragons can be killed.’ Brandon Hale does children the evergreen favor of providing adventures in which we learn the simple truth that dragons can be killed, heroism and courage are rewarded, and love and goodness triumph against wickedness.</blockquote>
+        <cite>Mark Shea, popular blogger and co-author of the New York Times bestseller “A Guide to the Passion.”</cite>
       </article>
     </div>
   </section>
@@ -93,11 +93,11 @@ layout: default
     <div class="bios">
       <section class="bio">
         <h2 class="txt-x-large">The Story Behind the Prince Martin Epic Series</h2>
-        <p>Brandon Hale was deployed overseas with the military in 2015. As the days and weeks passed, he began to feel like he was losing his bond with his young son, Thomas. Until the deployment, Thomas had been Brandon's trusty sidekick, but the boy had lost interest in talking to his overseas dad on the phone.</p>
+        <p>Brandon Hale was deployed overseas with the military in 2015. As the days and weeks passed, he began to feel like he was losing his bond with his young son, Thomas. Until the deployment, Thomas had been Brandon’s trusty sidekick, but the boy had lost interest in talking to his overseas dad on the phone.</p>
         <p>Then one day, Brandon had an idea. This time, when he called home, he asked if Thomas wanted to hear a story. A story about a Prince Martin, who was Brave, Loyal, and True. And Thomas was enchanted.</p>
         <p>From then on, when Brandon could call home, Thomas would beg him to tell a Prince Martin story. Throughout the deployment, Brandon told Thomas many Prince Martin tales, and the boy even named some of the main characters like Sir Ray and John the timberwolf.</p>
-        <p>Upon returning home from deployment, Brandon's wife encouraged him to turn his Prince Martin tales into children's books. Brandon started to write. At first, he tried writing in prose. But prose seemed so dull. Then he remembered how much fun it is to read aloud stories that rhyme. He finally decided to write the books in a poetic style called anapestic tetrameter, hoping that parents and children would enjoy reading the stories aloud.</p>
-        <p>Brandon's books in the Prince Martin Epic series can be read in order or as stand-alones:</p>
+        <p>Upon returning home from deployment, Brandon’s wife encouraged him to turn his Prince Martin tales into children’s books. Brandon started to write. At first, he tried writing in prose. But prose seemed so dull. Then he remembered how much fun it is to read aloud stories that rhyme. He finally decided to write the books in a poetic style called anapestic tetrameter, hoping that parents and children would enjoy reading the stories aloud.</p>
+        <p>Brandon’s books in the Prince Martin Epic series can be read in order or as stand-alones:</p>
         <ol>
           <li><em>Prince Martin Wins His Sword</em></li>
           <li><em>Prince Martin and the Thieves</em></li>
@@ -116,10 +116,10 @@ layout: default
           <h2 class="txt-align-center">About the Author</h2>
           <p>When Brandon Hale was a young boy, he lived in South America. It was a great place to be a kid, and his mom let him play outside as much as he wanted. He had a dog named Okie, a slingshot, and an awesome treehouse his dad built. The tree was full of pink mangoes and home to chattering parrots, slow-moving sloths, and fat iguanas. Sometimes, he would encounter a lanky boa constrictor coiled on a branch.</p>
           <p>When he was older, his family moved home to Oklahoma, and he began second grade. His favorite classes were Reading and History. His parents took him and his little sister to the lake a lot, and sometimes his uncles would take him hunting with their falcons. He loved Dr. Seuss, Treasure Island, The Swiss Family Robinson, Old Yeller, and The Hobbit.</p>
-          <p>Brandon went to school for 19 years, including college at Baylor University and law school at the University of Oklahoma College of Law. In 2001, a lovely lady agreed to marry Brandon. Now they have five great kids and live on the Oklahoma plains. He has 20 years of combined active and reserve Navy service and holds the rank of Captain. For his day job, he works in law enforcement. When he is not writing, Brandon enjoys spending time with his wife and kids, reading, hiking, biking, lifting weights, and visiting his parents' 160-acre Lazy H ranch in northeastern Oklahoma to hunt, fish, shoot, and ride four-wheelers.</p>
-          <p>Brandon's favorite authors are Patrick O'Brian, Walker Percy, C.S. Lewis, and J.R.R. Tolkien. His favorite books include The Lord of the Rings, A Canticle for Leibowitz, Lonesome Dove, The Road, The Stand, The Reverse of the Medal, A Christmas Carol, Love in the Ruins, Endurance: Shackleton's Incredible Voyage.</p>
-          <p>His favorite movies are The Passion, The Shawshank Redemption, Master and Commander, It's a Wonderful Life, A Few Good Men, High Noon, A Man for All Seasons, The Searchers, True Grit, and Braveheart.</p>
-          <p>His favorite children's books are The Clown of God, Horton Hatches an Egg, Horton Hears a Who, Saint George and the Dragon, and The Black Falcon.</p>
+          <p>Brandon went to school for 19 years, including college at Baylor University and law school at the University of Oklahoma College of Law. In 2001, a lovely lady agreed to marry Brandon. Now they have five great kids and live on the Oklahoma plains. He has 20 years of combined active and reserve Navy service and holds the rank of Captain. For his day job, he works in law enforcement. When he is not writing, Brandon enjoys spending time with his wife and kids, reading, hiking, biking, lifting weights, and visiting his parents’ 160-acre Lazy H ranch in northeastern Oklahoma to hunt, fish, shoot, and ride four-wheelers.</p>
+          <p>Brandon’s favorite authors are Patrick O’Brian, Walker Percy, C.S. Lewis, and J.R.R. Tolkien. His favorite books include The Lord of the Rings, A Canticle for Leibowitz, Lonesome Dove, The Road, The Stand, The Reverse of the Medal, A Christmas Carol, Love in the Ruins, Endurance: Shackleton’s Incredible Voyage.</p>
+          <p>His favorite movies are The Passion, The Shawshank Redemption, Master and Commander, It’s a Wonderful Life, A Few Good Men, High Noon, A Man for All Seasons, The Searchers, True Grit, and Braveheart.</p>
+          <p>His favorite children’s books are The Clown of God, Horton Hatches an Egg, Horton Hears a Who, Saint George and the Dragon, and The Black Falcon.</p>
         </div>
       </section>
 
@@ -127,9 +127,9 @@ layout: default
         <img src="/assets/images/illustrator-jason-zimdars.jpg" alt="Illustrator Jason Zimdars portrait" loading="lazy">
         <div>
           <h2 class="txt-align-center">About the Illustrator</h2>
-          <p>Jason Zimdars is an artist and designer best known as the illustrator of <a href="https://amzn.to/4qk0nEN">It Doesn't Have to Be Crazy at Work</a> and the Prince Martin Epic series.</p>
+          <p>Jason Zimdars is an artist and designer best known as the illustrator of <a href="https://amzn.to/4qk0nEN">It Doesn’t Have to Be Crazy at Work</a> and the Prince Martin Epic series.</p>
           <p>Jason has always loved to draw and grew up immersed in stories of heroes and magic like The Lord of the Rings, Star Wars, The Dark Crystal, and E.T. He always came home from the movies or the library to draw all the amazing characters and places he saw in his imagination.</p>
-          <p>When his friend Brandon told him about Prince Martin, he knew he had to draw him and all his friends, too. He cannot wait to share more of Prince Martin's adventures with you.</p>
+          <p>When his friend Brandon told him about Prince Martin, he knew he had to draw him and all his friends, too. He cannot wait to share more of Prince Martin’s adventures with you.</p>
           <p>Mr. Zimdars lives in Oklahoma with his family and three dogs, who are not nearly as brave as Sir Ray.</p>
         </div>
       </section>
