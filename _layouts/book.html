@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<header>
+  <div class="container txt-align-center margin-block-start-double">
+    <nav class="nav" aria-label="Main">
+      <a href="/" class="btn txt-medium">← Go Back</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="container book__detail">
+    <div>
+      {% if page.view_transition_name %}
+      <div style="view-transition-name: {{ page.view_transition_name }};">
+      {% else %}
+      <div>
+      {% endif %}
+        <img class="book__cover" src="{{ page.cover_image }}" alt="{{ page.cover_alt }}">
+      </div>
+      {% if page.gallery or page.cover_image %}
+      <div class="book__gallery">
+        {% if page.gallery %}
+          {% for item in page.gallery %}
+          <div class="book__gallery-item">
+            <button class="btn btn--plain" popovertarget="{{ item.id }}"><img src="{{ item.thumb }}" alt=""></button>
+            <div id="{{ item.id }}" popover>
+              <button class="btn btn--plain" popovertarget="{{ item.id }}" popovertargetaction="hide">
+                <img src="{{ item.image }}" alt="">
+              </button>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="book__gallery-item">
+            <button class="btn btn--plain" popovertarget="gallery-1"><img src="{{ page.cover_image }}" alt=""></button>
+            <div id="gallery-1" popover>
+              <button class="btn btn--plain" popovertarget="gallery-1" popovertargetaction="hide">
+                <img src="{{ page.cover_image }}" alt="">
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div>
+      {% if page.kicker %}
+      <div class="series__kicker" style="--color-accent: var(--color-link);">{{ page.kicker }}</div>
+      {% endif %}
+      <h1 class="book__title">{{ page.title }}</h1>
+      <div class="book__description">
+        {{ content }}
+        {% if page.buy_links %}
+        <div class="book__actions">
+          {% for link in page.buy_links %}
+          <a class="btn {{ link.class }}" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if page.show_byline != false %}
+        <div class="series__byline fill-blue pad-block pad-inline-double border-radius margin-block-double">
+          <h3 class="margin-none txt-large">Is your son a reluctant reader?</h3>
+          <p>The Prince Martin Epic series is a perfect fit because each book features:</p>
+          <ul>
+            <li>High-stakes action-adventure and danger</li>
+            <li>Brilliant color illustrations that burst off the page</li>
+            <li>Text that appears to be prose—but <i>subtly rhymes,</i> gently nudging the boy along as he is encouraged to find the next rhyme</li>
+          </ul>
+          <p>This is the perfect formula for engaging <i>boy</i> readers.</p>
+          <p>The Prince Martin Epic series is adventure books that fill a need: because they RHYME your son will read!</p>
+          <p>This book series will hook your son on reading because the subtly rhyming text fascinates reluctant readers, who can't wait to discover the next epic rhyme. Your son will also love the books because of the explosive art and high-stakes action-adventure. These are not "safe" books!</p>
+          <p>Parents will appreciate these classic tales because they build character, model virtue, and inspire grit and resilience in boys. The series grows with your son: Each successive book gets longer and the plot more action-packed! And each book can be read as a stand-alone.</p>
+          <p>Introduce your son to Prince Martin today because boys need virtuous heroes!</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</main>
