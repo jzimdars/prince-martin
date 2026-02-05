@@ -25,7 +25,7 @@ layout: default
         {% for book in epic_books %}
         <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
           <img src="{{ book.cover }}" alt="{{ book.cover_alt }}">
-          <span>{{ book.title }}</span>
+          <span>{{ book.book_title }}</span>
         </a>
         {% endfor %}
       </div>
@@ -41,7 +41,7 @@ layout: default
       {% for book in picture_books %}
       <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
         <img src="{{ book.cover }}" alt="{{ book.cover_alt }}">
-        <span>{{ book.title }}</span>
+        <span>{{ book.book_title }}</span>
       </a>
       {% endfor %}
     </div>

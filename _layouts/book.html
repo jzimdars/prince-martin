@@ -48,7 +48,7 @@ layout: default
       {% if page.kicker %}
       <div class="series__kicker" style="--color-accent: var(--color-link);">{{ page.kicker }}</div>
       {% endif %}
-      <h1 class="book__title">{{ page.title }}</h1>
+      <h1 class="book__title">{{ page.book_title | default: page.title }}</h1>
       <div class="book__description">
         {{ content }}
         {% if page.buy_links %}
