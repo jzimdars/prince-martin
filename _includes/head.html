@@ -6,17 +6,17 @@
   {% if page.view_transition %}
   <meta name="view-transition" content="same-origin">
   {% endif %}
-  <link rel="stylesheet" href="assets/stylesheets/reset.css">
-  <link rel="stylesheet" href="assets/stylesheets/base.css">
-  <link rel="stylesheet" href="assets/stylesheets/utilities.css">
-  <link rel="stylesheet" href="assets/stylesheets/layout.css">
-  <link rel="stylesheet" href="assets/stylesheets/home.css">
-  <link rel="stylesheet" href="assets/stylesheets/books.css">
-  <link rel="stylesheet" href="assets/stylesheets/testimonials.css">
-  <link rel="stylesheet" href="assets/stylesheets/about.css">
-  <link rel="stylesheet" href="assets/stylesheets/buttons.css">
-  <link rel="stylesheet" href="assets/stylesheets/popover.css">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/reset.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/base.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/utilities.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/layout.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/home.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/books.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/testimonials.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/about.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/buttons.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/popover.css" | relative_url }}">
   {% if page.include_book_styles %}
-  <link rel="stylesheet" href="assets/stylesheets/book.css">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/book.css" | relative_url }}">
   {% endif %}
 </head>

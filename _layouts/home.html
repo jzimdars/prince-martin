@@ -11,7 +11,7 @@ layout: default
         <a href="#start" class="btn hero__button txt-large">Browse books</a>
       </header>
       <div>
-        <img src="assets/images/hero.png" alt="Prince Martin" class="hero__image" />
+        <img src="{{ "/assets/images/hero.png" | relative_url }}" alt="Prince Martin" class="hero__image" />
       </div>
     </div>
   </section>
@@ -23,8 +23,8 @@ layout: default
       <div class="books-index">
         {% assign epic_books = site.data.books | where: "series", "epic" | sort: "book_number" %}
         {% for book in epic_books %}
-        <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
-          <img src="{{ book.cover }}" alt="{{ book.cover_alt }}" loading="lazy">
+        <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}" style="view-transition-name: {{ book.view_transition_name }}">
+          <img src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt }}" loading="lazy">
           <span>{{ book.book_title }}</span>
         </a>
         {% endfor %}
@@ -39,8 +39,8 @@ layout: default
     <div class="books-index" style="--cover-width: 280px">
       {% assign picture_books = site.data.books | where: "series", "picture" | sort: "book_number" %}
       {% for book in picture_books %}
-      <a class="books-index__book" href="/products/{{ book.slug }}/" style="view-transition-name: {{ book.view_transition_name }}">
-        <img src="{{ book.cover }}" alt="{{ book.cover_alt }}">
+      <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}" style="view-transition-name: {{ book.view_transition_name }}">
+        <img src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt }}">
         <span>{{ book.book_title }}</span>
       </a>
       {% endfor %}
@@ -111,7 +111,7 @@ layout: default
       </section>
 
       <section class="bio">
-        <img src="assets/images/author-brandon-hale.jpg" alt="Author Brandon Hale portrait" loading="lazy">
+        <img src="{{ "/assets/images/author-brandon-hale.jpg" | relative_url }}" alt="Author Brandon Hale portrait" loading="lazy">
         <div>
           <h2 class="txt-align-center">About the Author</h2>
           <p>When Brandon Hale was a young boy, he lived in South America. It was a great place to be a kid, and his mom let him play outside as much as he wanted. He had a dog named Okie, a slingshot, and an awesome treehouse his dad built. The tree was full of pink mangoes and home to chattering parrots, slow-moving sloths, and fat iguanas. Sometimes, he would encounter a lanky boa constrictor coiled on a branch.</p>
@@ -124,7 +124,7 @@ layout: default
       </section>
 
       <section class="bio">
-        <img src="assets/images/illustrator-jason-zimdars.jpg" alt="Illustrator Jason Zimdars portrait" loading="lazy">
+        <img src="{{ "/assets/images/illustrator-jason-zimdars.jpg" | relative_url }}" alt="Illustrator Jason Zimdars portrait" loading="lazy">
         <div>
           <h2 class="txt-align-center">About the Illustrator</h2>
           <p>Jason Zimdars is an artist and designer best known as the illustrator of <a href="https://amzn.to/4qk0nEN">It Doesn’t Have to Be Crazy at Work</a> and the Prince Martin Epic series.</p>

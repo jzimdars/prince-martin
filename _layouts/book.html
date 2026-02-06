@@ -5,7 +5,7 @@ layout: default
   <section class="hero">
     <div class="container">
       <header class="txt-align-start">
-        <a href="/" class="btn txt-medium margin-block">← Go Back</a>
+        <a href="{{ "/" | relative_url }}" class="btn txt-medium margin-block">← Go Back</a>
       </header>
     </div>
   </section>
@@ -16,24 +16,24 @@ layout: default
       {% else %}
       <div>
       {% endif %}
-        <img class="book__cover" src="{{ page.cover_image }}" alt="{{ page.cover_alt }}">
+        <img class="book__cover" src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_alt }}">
       </div>
       {% if page.gallery or page.cover_image %}
       <div class="book__gallery">
         {% if page.gallery %}
           {% for item in page.gallery %}
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="{{ item.id }}"><img src="{{ item.thumb }}" alt=""></button>
+            <button class="btn btn--plain" popovertarget="{{ item.id }}"><img src="{{ item.thumb | relative_url }}" alt=""></button>
             <div id="{{ item.id }}" popover>
               {% if item.video %}
               <div class="book__gallery-video">
                 <video controls playsinline preload="metadata">
-                  <source src="{{ item.video }}">
+                  <source src="{{ item.video | relative_url }}">
                 </video>
               </div>
               {% else %}
               <button class="btn btn--plain" popovertarget="{{ item.id }}" popovertargetaction="hide">
-                <img src="{{ item.image }}" alt="" loading="lazy">
+                <img src="{{ item.image | relative_url }}" alt="" loading="lazy">
               </button>
               {% endif %}
             </div>
@@ -41,10 +41,10 @@ layout: default
           {% endfor %}
         {% else %}
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="gallery-1"><img src="{{ page.cover_image }}" alt=""></button>
+            <button class="btn btn--plain" popovertarget="gallery-1"><img src="{{ page.cover_image | relative_url }}" alt=""></button>
             <div id="gallery-1" popover>
               <button class="btn btn--plain" popovertarget="gallery-1" popovertargetaction="hide">
-                <img src="{{ page.cover_image }}" alt="">
+                <img src="{{ page.cover_image | relative_url }}" alt="">
               </button>
             </div>
           </div>

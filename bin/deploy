@@ -4,7 +4,7 @@ set -euo pipefail
 root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$root_dir"
 
-bin/build
+mise exec -- bundle exec jekyll build
 
 if [[ -f CNAME ]]; then
   cp CNAME _site/CNAME
