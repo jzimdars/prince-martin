@@ -11,13 +11,7 @@ layout: default
   </section>
   <div class="container book__detail">
     <div>
-      {% if page.view_transition_name %}
-      <div style="view-transition-name: {{ page.view_transition_name }};">
-      {% else %}
-      <div>
-      {% endif %}
-        <img class="book__cover" src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_alt }}">
-      </div>
+      <img class="book__cover" src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_alt }}" style="view-transition-name: {{ page.view_transition_name }};">
       {% if page.gallery or page.cover_image %}
       <div class="book__gallery">
         {% if page.gallery %}

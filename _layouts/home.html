@@ -33,14 +33,14 @@ layout: default
   </section>
 
   <section class="series" style="--color-accent: var(--color-purple); --color-gradient-1: var(--color-purple-light); --color-gradient-2: var(--color-purple-lightest);">
-    <p class="series__kicker">3-book picture book prequel series</p>
+    <p class="series__kicker">Picture book prequel series</p>
     <h2 class="series__title">Little Prince Martin Picture Books</h2>
     <p class="series__description">Picture books for younger readers with playful rhymes, bold artwork, and brave hearts.</p>
     <div class="books-index" style="--cover-width: 280px">
       {% assign picture_books = site.data.books | where: "series", "picture" | sort: "book_number" %}
       {% for book in picture_books %}
-      <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}" style="view-transition-name: {{ book.view_transition_name }}">
-        <img src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt }}">
+      <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
+        <img src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt }}" style="view-transition-name: {{ book.view_transition_name }}">
         <span>{{ book.book_title }}</span>
       </a>
       {% endfor %}
