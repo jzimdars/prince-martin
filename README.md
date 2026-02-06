@@ -6,6 +6,6 @@ Princemartin.com website
    - `bin/setup`
 2. Run the site:
    - `bin/dev`
-   - Open `http://127.0.0.1:4000/prince-martin/` to mirror production paths.
+   - Open `http://127.0.0.1:4000/`.
 3. Deploy to GitHub Pages:
    - `bin/deploy`
