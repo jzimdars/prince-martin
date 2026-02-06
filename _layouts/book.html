@@ -85,4 +85,20 @@ layout: default
       </div>
     </div>
   </div>
+  {% assign page_reviews = site.data.reviews[page.review_key] %}
+  {% if page_reviews and page_reviews.size > 0 %}
+  <section class="testimonials">
+    <h2 class="margin-block-end-double margin-block-start-half txt-x-large">Customer reviews for {{ page.book_title }}</h2>
+    <div class="testimonials__wrap" role="list">
+      {% for review in page_reviews %}
+      <article class="testimonial txt-align-center" role="listitem">
+        <div class="testimonial__score txt-large">{{ review.stars }}</div>
+        <h3 class="txt-medium">{{ review.title }}</h3>
+        <blockquote class="txt-medium">{{ review.content }}</blockquote>
+        <cite class="txt-small">{{ review.reviewer }}</cite>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 </main>
