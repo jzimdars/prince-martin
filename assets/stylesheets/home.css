@@ -5,7 +5,6 @@
     background: linear-gradient(var(--angle), oklch(0.2538 0.0413 281.03) 20%, oklch(0.3429 0.0484 272.49) 50%);
     border-block-start: 1em solid oklch(0.7518 0.1727 58.11);
     color: oklch(var(--lch-white));
-    view-transition-name: hero;
 
     @media (max-width: 639px) {
       --angle: 180deg;
