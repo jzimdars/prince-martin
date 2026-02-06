@@ -6,7 +6,5 @@ Princemartin.com website
    - `bin/setup`
 2. Run the site:
    - `bin/dev`
-3. Build the site:
-   - `bin/build`
-4. Deploy to GitHub Pages:
+3. Deploy to GitHub Pages:
    - `bin/deploy`
