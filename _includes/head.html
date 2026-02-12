@@ -3,9 +3,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
-  {% if page.view_transition %}
-  <meta name="view-transition" content="same-origin">
-  {% endif %}
   <link rel="stylesheet" href="{{ "/assets/stylesheets/reset.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/base.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/utilities.css" | relative_url }}">
@@ -16,7 +13,5 @@
   <link rel="stylesheet" href="{{ "/assets/stylesheets/about.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/buttons.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/popover.css" | relative_url }}">
-  {% if page.include_book_styles %}
   <link rel="stylesheet" href="{{ "/assets/stylesheets/book.css" | relative_url }}">
-  {% endif %}
 </head>
