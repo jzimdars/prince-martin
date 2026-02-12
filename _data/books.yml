@@ -3,6 +3,11 @@
   series: epic
   book_number: 1
   cover: /assets/images/books/prince-martin-wins-his-sword.jpg
+  cover_width: 1703
+  cover_height: 2550
+  cover_thumb: /assets/images/books/thumbs/prince-martin-wins-his-sword.jpg
+  cover_thumb_width: 467
+  cover_thumb_height: 700
   cover_alt: Prince Martin Wins His Sword cover
   view_transition_name: PM-book-1
 - book_title: Prince Martin and the Thieves
@@ -10,6 +15,11 @@
   series: epic
   book_number: 2
   cover: /assets/images/books/prince-martin-and-the-thieves.jpg
+  cover_width: 1703
+  cover_height: 2550
+  cover_thumb: /assets/images/books/thumbs/prince-martin-and-the-thieves.jpg
+  cover_thumb_width: 467
+  cover_thumb_height: 700
   cover_alt: Prince Martin and the Thieves cover
   view_transition_name: PM-book-2
 - book_title: Prince Martin and the Dragons
@@ -17,6 +27,11 @@
   series: epic
   book_number: 3
   cover: /assets/images/books/prince-martin-and-the-dragons-hardcover.jpg
+  cover_width: 1703
+  cover_height: 2550
+  cover_thumb: /assets/images/books/thumbs/prince-martin-and-the-dragons-hardcover.jpg
+  cover_thumb_width: 467
+  cover_thumb_height: 700
   cover_alt: Prince Martin and the Dragons cover
   view_transition_name: PM-book-3
 - book_title: Prince Martin and the Cave Bear
@@ -24,6 +39,11 @@
   series: epic
   book_number: 4
   cover: /assets/images/books/prince-martin-and-the-cave-bear.jpg
+  cover_width: 1703
+  cover_height: 2550
+  cover_thumb: /assets/images/books/thumbs/prince-martin-and-the-cave-bear.jpg
+  cover_thumb_width: 467
+  cover_thumb_height: 700
   cover_alt: Prince Martin and the Cave Bear cover
   view_transition_name: PM-book-4
 - book_title: Prince Martin and the Last Centaur
@@ -31,6 +51,11 @@
   series: epic
   book_number: 5
   cover: /assets/images/books/prince-martin-and-the-last-centaur.jpg
+  cover_width: 1799
+  cover_height: 2698
+  cover_thumb: /assets/images/books/thumbs/prince-martin-and-the-last-centaur.jpg
+  cover_thumb_width: 466
+  cover_thumb_height: 700
   cover_alt: Prince Martin and the Last Centaur cover
   view_transition_name: PM-book-5
 - book_title: Prince Martin and the Pirates
@@ -38,6 +63,11 @@
   series: epic
   book_number: 6
   cover: /assets/images/books/prince-martin-and-the-pirates.jpg
+  cover_width: 1799
+  cover_height: 2698
+  cover_thumb: /assets/images/books/thumbs/prince-martin-and-the-pirates.jpg
+  cover_thumb_width: 466
+  cover_thumb_height: 700
   cover_alt: Prince Martin and the Pirates cover
   view_transition_name: PM-book-6
 - book_title: Prince Martin and the Quest for the Bloodstone
@@ -45,6 +75,11 @@
   series: epic
   book_number: 7
   cover: /assets/images/books/prince-martin-and-the-quest-for-the-bloodstone.jpg
+  cover_width: 1418
+  cover_height: 2126
+  cover_thumb: /assets/images/books/thumbs/prince-martin-and-the-quest-for-the-bloodstone.jpg
+  cover_thumb_width: 467
+  cover_thumb_height: 700
   cover_alt: Prince Martin and the Quest for the Bloodstone cover
   view_transition_name: PM-book-7
 - book_title: Honesty Pays
@@ -52,6 +87,11 @@
   series: picture
   book_number: 1
   cover: /assets/images/books/honesty-pays-a-little-prince-martin-picture-book.png
+  cover_width: 1910
+  cover_height: 1920
+  cover_thumb: /assets/images/books/thumbs/honesty-pays-a-little-prince-martin-picture-book.png
+  cover_thumb_width: 696
+  cover_thumb_height: 700
   cover_alt: Honesty Pays cover
   view_transition_name: LPM-book-1
 - book_title: Seven Labors
@@ -59,6 +99,11 @@
   series: picture
   book_number: 2
   cover: /assets/images/books/little-prince-martin-and-the-seven-labors-small-boys-can-do-big-jobs.jpg
+  cover_width: 1893
+  cover_height: 1920
+  cover_thumb: /assets/images/books/thumbs/little-prince-martin-and-the-seven-labors-small-boys-can-do-big-jobs.jpg
+  cover_thumb_width: 690
+  cover_thumb_height: 700
   cover_alt: Seven Labors cover
   view_transition_name: LPM-book-2
 - book_title: Braves the Night
@@ -66,5 +111,10 @@
   series: picture
   book_number: 3
   cover: /assets/images/books/little-prince-martin-braves-the-night-to-save-the-day.jpg
+  cover_width: 2550
+  cover_height: 2550
+  cover_thumb: /assets/images/books/thumbs/little-prince-martin-braves-the-night-to-save-the-day.jpg
+  cover_thumb_width: 700
+  cover_thumb_height: 700
   cover_alt: Braves the Night cover
   view_transition_name: LPM-book-3
