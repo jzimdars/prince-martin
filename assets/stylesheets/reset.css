@@ -55,6 +55,7 @@
 
   /* Make images easier to work with */
   img {
+    block-size: auto;
     display: block;
     max-inline-size: 100%;
   }

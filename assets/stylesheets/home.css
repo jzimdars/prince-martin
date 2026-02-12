@@ -2,9 +2,9 @@
   .hero {
     --angle: 90deg;
 
-    background: linear-gradient(var(--angle), oklch(0.2538 0.0413 281.03) 20%, oklch(0.3429 0.0484 272.49) 50%);
-    border-block-start: 1em solid oklch(0.7518 0.1727 58.11);
-    color: oklch(var(--lch-white));
+    background: linear-gradient(var(--angle), var(--color-brand-hero-dark) 20%, var(--color-brand-hero-mid) 50%);
+    border-block-start: 1em solid var(--color-brand-gold);
+    color: var(--color-white);
 
     @media (max-width: 639px) {
       --angle: 180deg;
@@ -23,9 +23,9 @@
   }
 
   .hero__button {
-    --btn-background: oklch(0.7518 0.1727 58.11);
-    --btn-border-color: oklch(0.2538 0.0413 281.03);
-    --btn-color: oklch(0.2538 0.0413 281.03);
+    --btn-background: var(--color-brand-gold);
+    --btn-border-color: var(--color-brand-hero-dark);
+    --btn-color: var(--color-brand-hero-dark);
 
     margin-block-end: var(--space-double);
   }
@@ -36,7 +36,7 @@
   }
 
   .hero__title {
-    color: oklch(0.7518 0.1727 58.11);
+    color: var(--color-brand-gold);
     font-size: var(--text-medium);
     font-weight: bold;
     letter-spacing: 0.15em;
@@ -49,15 +49,15 @@
   }
   
   .hero__logo {
-    fill: oklch(var(--lch-white));
+    fill: var(--color-white);
     margin-inline: auto;
     max-inline-size: 45ch;
   }
 
   .footer {
-    background: linear-gradient(-33deg, oklch(14.958% 0.00002 271.152), oklch(20.019% 0.00002 271.152));
-    border-block-start: 0.5em solid oklch(23.185% 0.00153 16.319);
-    color: oklch(var(--lch-white));
+    background: linear-gradient(-33deg, var(--color-brand-footer-darkest), var(--color-brand-footer-darker));
+    border-block-start: 0.5em solid var(--color-brand-footer-dark);
+    color: var(--color-white);
     font-size: var(--text-normal);
     padding: var(--space-double);
 
@@ -67,10 +67,9 @@
 
     svg {
       block-size: 1.4em;
-      fill: oklch(var(--lch-white));
+      fill: var(--color-white);
       inline-size: 1.4em;
       vertical-align: middle;
     }
   }
 }
-

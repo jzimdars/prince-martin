@@ -1,7 +1,7 @@
 @layer modules {
   .testimonials {
-    background: linear-gradient(-33deg, oklch(var(--lch-lime-light)), oklch(var(--lch-lime-lightest)));
-    border-block-start: 0.5em solid oklch(var(--lch-lime-dark));
+    background: linear-gradient(-33deg, var(--color-lime-light), var(--color-lime-lightest));
+    border-block-start: 0.5em solid var(--color-lime-dark);
     padding: var(--space-double);
   }
 
@@ -29,7 +29,7 @@
     }
 
     cite {
-      color: oklch(var(--lch-lime-dark));
+      color: var(--color-lime-dark);
       display: block;
       font-style: normal;
       padding: var(--space-half) var(--space) var(--space-double);
