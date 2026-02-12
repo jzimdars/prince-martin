@@ -53,6 +53,12 @@
   /* OKLCH colors: Fixed */
   --lch-black: 0% 0 0;
   --lch-white: 100% 0 0;
+  --lch-brand-gold: 0.7518 0.1727 58.11;
+  --lch-brand-hero-dark: 0.2538 0.0413 281.03;
+  --lch-brand-hero-mid: 0.3429 0.0484 272.49;
+  --lch-brand-footer-darkest: 14.958% 0.00002 271.152;
+  --lch-brand-footer-darker: 20.019% 0.00002 271.152;
+  --lch-brand-footer-dark: 23.185% 0.00153 16.319;
 
   /* OKLCH colors: Light mode */
   --lch-canvas: var(--lch-white);
@@ -105,6 +111,7 @@
 
   /* Colors: Abstractions */
   --color-black: oklch(var(--lch-black));
+  --color-white: oklch(var(--lch-white));
   --color-canvas: oklch(var(--lch-canvas));
   --color-ink: oklch(var(--lch-ink));
   --color-ink-light: oklch(var(--lch-ink-light));
@@ -120,6 +127,15 @@
   --color-purple-light: oklch(var(--lch-purple-light));
   --color-purple-lighter: oklch(var(--lch-purple-lighter));
   --color-purple-lightest: oklch(var(--lch-purple-lightest));
+  --color-lime-dark: oklch(var(--lch-lime-dark));
+  --color-lime-light: oklch(var(--lch-lime-light));
+  --color-lime-lightest: oklch(var(--lch-lime-lightest));
+  --color-brand-gold: oklch(var(--lch-brand-gold));
+  --color-brand-hero-dark: oklch(var(--lch-brand-hero-dark));
+  --color-brand-hero-mid: oklch(var(--lch-brand-hero-mid));
+  --color-brand-footer-darkest: oklch(var(--lch-brand-footer-darkest));
+  --color-brand-footer-darker: oklch(var(--lch-brand-footer-darker));
+  --color-brand-footer-dark: oklch(var(--lch-brand-footer-dark));
 }
 
 
