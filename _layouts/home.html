@@ -23,8 +23,8 @@ layout: default
       <div class="books-index">
         {% assign epic_books = site.data.books | where: "series", "epic" | sort: "book_number" %}
         {% for book in epic_books %}
-        <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}" style="view-transition-name: {{ book.view_transition_name }}">
-          <img src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt }}" loading="lazy">
+        <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
+          <img src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt }}" loading="lazy" style="view-transition-name: {{ book.view_transition_name }}">
           <span>{{ book.book_title }}</span>
         </a>
         {% endfor %}

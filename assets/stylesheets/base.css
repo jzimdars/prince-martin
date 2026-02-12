@@ -1,5 +1,9 @@
 @layer reset, base, components, modules, utilities, native, platform;
 
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   /* Spacing */
   --space: 1rem;
