@@ -12,7 +12,10 @@ layout: default
         <a href="#start" class="btn hero__button txt-large">Browse books</a>
       </header>
       <div>
-        <img src="{{ "/assets/images/hero.png" | relative_url }}?v={{ asset_v }}" alt="Prince Martin" class="hero__image" width="1013" height="1280" decoding="async" fetchpriority="high" />
+        <picture>
+          <source srcset="{{ "/assets/images/hero.webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
+          <img src="{{ "/assets/images/hero.png" | relative_url }}?v={{ asset_v }}" alt="Prince Martin" class="hero__image" width="1013" height="1280" decoding="async" fetchpriority="high" />
+        </picture>
       </div>
     </div>
   </section>
@@ -25,7 +28,12 @@ layout: default
         {% assign epic_books = site.data.books | where: "series", "epic" | sort: "book_number" %}
         {% for book in epic_books %}
         <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
-          <img src="{{ book.cover_thumb | default: book.cover | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
+          {% assign cover_thumb = book.cover_thumb | default: book.cover %}
+          {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
+          <picture>
+            <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
+            <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
+          </picture>
           <span>{{ book.book_title }}</span>
         </a>
         {% endfor %}
@@ -41,7 +49,12 @@ layout: default
       {% assign picture_books = site.data.books | where: "series", "picture" | sort: "book_number" %}
       {% for book in picture_books %}
       <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
-        <img src="{{ book.cover_thumb | default: book.cover | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
+        {% assign cover_thumb = book.cover_thumb | default: book.cover %}
+        {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
+        <picture>
+          <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
+          <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
+        </picture>
         <span>{{ book.book_title }}</span>
       </a>
       {% endfor %}
@@ -112,7 +125,10 @@ layout: default
       </section>
 
       <section class="bio">
-        <img src="{{ "/assets/images/author-brandon-hale.jpg" | relative_url }}?v={{ asset_v }}" alt="Author Brandon Hale portrait" width="2521" height="1755" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="{{ "/assets/images/author-brandon-hale.webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
+          <img src="{{ "/assets/images/author-brandon-hale.jpg" | relative_url }}?v={{ asset_v }}" alt="Author Brandon Hale portrait" width="2521" height="1755" loading="lazy" decoding="async">
+        </picture>
         <div>
           <h2 class="txt-align-center">About the Author</h2>
           <p>When Brandon Hale was a young boy, he lived in South America. It was a great place to be a kid, and his mom let him play outside as much as he wanted. He had a dog named Okie, a slingshot, and an awesome treehouse his dad built. The tree was full of pink mangoes and home to chattering parrots, slow-moving sloths, and fat iguanas. Sometimes, he would encounter a lanky boa constrictor coiled on a branch.</p>
@@ -125,7 +141,10 @@ layout: default
       </section>
 
       <section class="bio">
-        <img src="{{ "/assets/images/illustrator-jason-zimdars.jpg" | relative_url }}?v={{ asset_v }}" alt="Illustrator Jason Zimdars portrait" width="407" height="480" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="{{ "/assets/images/illustrator-jason-zimdars.webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
+          <img src="{{ "/assets/images/illustrator-jason-zimdars.jpg" | relative_url }}?v={{ asset_v }}" alt="Illustrator Jason Zimdars portrait" width="407" height="480" loading="lazy" decoding="async">
+        </picture>
         <div>
           <h2 class="txt-align-center">About the Illustrator</h2>
           <p>Jason Zimdars is an artist and designer best known as the illustrator of <a href="https://amzn.to/4qk0nEN">It Doesn’t Have to Be Crazy at Work</a> and the Prince Martin Epic series.</p>

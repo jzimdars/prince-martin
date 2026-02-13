@@ -47,6 +47,10 @@
   .hero__image {
     inline-size: 100%;
   }
+
+  .hero picture {
+    display: block;
+  }
   
   .hero__logo {
     fill: var(--color-white);
