@@ -11,6 +11,10 @@
     margin: 0;
     padding: var(--space) 0;
 
+    picture {
+      display: block;
+    }
+
     img {
       --size: 12rem;
   

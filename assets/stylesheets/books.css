@@ -29,6 +29,10 @@
     box-shadow: var(--shadow);
     inline-size: 100%;
   }
+
+  .books-index__book picture {
+    display: block;
+  }
   
   .books-index__book span {
     display: none;
