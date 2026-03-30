@@ -206,14 +206,6 @@
     }
   }
 
-  ::selection {
-    background: var(--color-selected);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-selected-dark);
-    }
-  }
-
   :where(ul, ol):where([role="list"]) {
     margin: 0;
     padding: 0;
