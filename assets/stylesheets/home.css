@@ -76,4 +76,26 @@
       vertical-align: middle;
     }
   }
+
+  .trailer {
+    padding-block: calc(var(--space) * 3);
+    text-align: center;
+  }
+
+  .trailer__frame {
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin: var(--space-double) auto 0;
+    max-inline-size: 960px;
+    overflow: hidden;
+    background: var(--color-black);
+  }
+
+  .trailer__video {
+    block-size: 100%;
+    display: block;
+    inline-size: 100%;
+    object-fit: cover;
+  }
 }

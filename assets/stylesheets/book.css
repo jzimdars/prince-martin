@@ -49,6 +49,41 @@
     text-align: center;
   }
 
+  .buy-menu {
+    background: var(--color-canvas);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    color: var(--color-ink);
+    margin: auto;
+    max-inline-size: min(22rem, calc(100vw - var(--space-double)));
+    padding: var(--space-double) var(--space);
+    text-align: center;
+    inline-size: 100%;
+  }
+
+  .buy-menu__title {
+    font-size: var(--text-large);
+    margin: 0 0 var(--space);
+  }
+
+  .buy-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-half);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .buy-menu__link {
+    inline-size: 100%;
+  }
+
+  .buy-menu__close {
+    margin-block-start: var(--space);
+    text-decoration: underline;
+  }
+
   .book__note {
     font-size: var(--text-x-small);
     text-transform: uppercase;

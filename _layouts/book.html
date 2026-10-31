@@ -55,8 +55,20 @@ layout: default
       <h1 class="book__title">{{ page.book_title | default: page.title }}</h1>
       <div class="book__description">
         {{ content }}
-        {% if page.buy_links %}
+        {% if page.buy_links or page.amazon_formats %}
         <div class="book__actions">
+          {% if page.amazon_formats %}
+          <button type="button" class="btn btn--link" popovertarget="amazon-formats" aria-haspopup="dialog" aria-controls="amazon-formats">Buy at Amazon <span aria-hidden="true">▾</span></button>
+          <div id="amazon-formats" class="buy-menu" popover role="dialog" aria-labelledby="amazon-formats-title">
+            <h2 id="amazon-formats-title" class="buy-menu__title">Choose a format</h2>
+            <ul class="buy-menu__list" role="list">
+              {% for format in page.amazon_formats %}
+              <li><a class="btn buy-menu__link" href="{{ format.url }}" target="_blank" rel="noopener">{{ format.label }}<span class="visually-hidden"> on Amazon (opens in a new tab)</span></a></li>
+              {% endfor %}
+            </ul>
+            <button type="button" class="btn btn--plain buy-menu__close" popovertarget="amazon-formats" popovertargetaction="hide">Cancel</button>
+          </div>
+          {% endif %}
           {% for link in page.buy_links %}
           <a class="btn {{ link.class }}" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
           {% endfor %}

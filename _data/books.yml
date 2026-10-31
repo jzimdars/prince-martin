@@ -118,3 +118,15 @@
   cover_thumb_height: 700
   cover_alt: Braves the Night cover
   view_transition_name: LPM-book-3
+- book_title: The Prince Martin Epic Coloring Book
+  slug: the-prince-martin-epic-coloring-book
+  series: coloring
+  book_number: 1
+  cover: /assets/images/books/the-prince-martin-epic-coloring-book.jpg
+  cover_width: 1051
+  cover_height: 1360
+  cover_thumb: /assets/images/books/thumbs/the-prince-martin-epic-coloring-book.jpg
+  cover_thumb_width: 541
+  cover_thumb_height: 700
+  cover_alt: The Prince Martin Epic Coloring Book cover
+  view_transition_name: PM-coloring-book
