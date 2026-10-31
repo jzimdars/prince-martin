@@ -19,6 +19,19 @@ layout: default
       </div>
     </div>
   </section>
+  <section class="trailer pad-inline" aria-labelledby="trailer-title">
+    <div class="container">
+      <p class="series__kicker">Watch the trailer</p>
+      <h2 class="series__title" id="trailer-title">Seven adventures. One young hero.</h2>
+      <div class="trailer__frame">
+        <video class="trailer__video" controls playsinline preload="none" poster="{{ "/assets/videos/prince-martin-epic-trailer-poster.jpg" | relative_url }}?v={{ asset_v }}" width="1920" height="1080" aria-label="The Prince Martin Epic video trailer">
+          <source src="{{ "/assets/videos/prince-martin-epic-trailer.mp4" | relative_url }}?v={{ asset_v }}" type="video/mp4">
+          <a href="{{ "/assets/videos/prince-martin-epic-trailer.mp4" | relative_url }}">Download the Prince Martin Epic trailer</a>
+        </video>
+      </div>
+    </div>
+  </section>
+
   <section class="series" id="start">
     <div class="container">
       <p class="series__kicker">7-book series of chapter books</p>
@@ -59,6 +72,27 @@ layout: default
       </a>
       {% endfor %}
     </div>
+  </section>
+
+  <section class="series" style="--color-accent: var(--color-lime-dark); --color-gradient-1: var(--color-lime-light); --color-gradient-2: var(--color-lime-lightest);">
+    <p class="series__kicker">Coloring book</p>
+    <h2 class="series__title">The Prince Martin Epic Coloring Book</h2>
+    <p class="series__description">170 pages of action-packed scenes from the series for boys to color—some easy, some harder.</p>
+    <div class="books-index" style="--cover-width: 280px">
+      {% assign coloring_books = site.data.books | where: "series", "coloring" | sort: "book_number" %}
+      {% for book in coloring_books %}
+      <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
+        {% assign cover_thumb = book.cover_thumb | default: book.cover %}
+        {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
+        <picture>
+          <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
+          <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
+        </picture>
+        <span>{{ book.book_title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="txt-align-center"><a class="btn btn--link" href="https://www.amazon.com/dp/1737657694" target="_blank" rel="noopener">Buy at Amazon</a></p>
   </section>
 
   <section class="testimonials">
