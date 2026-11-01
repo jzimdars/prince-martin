@@ -1,0 +1,19 @@
+{%- if page.person == "brandon" -%}{%- assign pname = "Brandon Hale" -%}{%- assign prole = "author" -%}{%- assign pimg = "/assets/images/author-brandon-hale.jpg" -%}{%- assign pjob = "Author" -%}
+{%- else -%}{%- assign pname = "Jason Zimdars" -%}{%- assign prole = "illustrator" -%}{%- assign pimg = "/assets/images/illustrator-jason-zimdars.jpg" -%}{%- assign pjob = "Illustrator" -%}{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "@id": {{ page.url | absolute_url | append: "#person" | jsonify }},
+    "name": {{ pname | jsonify }},
+    "jobTitle": {{ pjob | jsonify }},
+    "image": {{ pimg | absolute_url | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "description": {{ page.description | jsonify }}{% if page.person == "brandon" %},
+    "sameAs": ["https://www.facebook.com/princemartinepic", "https://www.instagram.com/prince.martin.epic/"]{% endif %}
+  }
+}
+</script>

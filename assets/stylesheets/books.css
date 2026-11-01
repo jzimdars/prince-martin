@@ -34,9 +34,6 @@
     display: block;
   }
   
-  .books-index__book span {
-    display: none;
-  }
 
   .series {
     --color-accent: var(--color-link);
@@ -66,4 +63,60 @@
     font-size: var(--text-xx-large);
     margin: 0;
   }
+}
+
+@layer modules {
+  ol.books-index { list-style: none; padding: 0; }
+  .books-index > li { flex-basis: var(--cover-width, 250px); }
+  .books-index__book { display: block; position: relative; }
+  .series__more { margin: 0; a { color: var(--color-accent); font-weight: bold; text-decoration: underline; text-underline-offset: 0.15em; } }
+
+  .series-guide { padding-block: var(--space-double); }
+  .series-guide__inner { max-inline-size: 60rem; margin-inline: auto; }
+  .series-guide__title { font-size: var(--text-x-large); margin: 0 0 var(--space); text-align: center; }
+  .series-guide__cards { display: grid; gap: var(--space); grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .series-guide__card {
+    --color-accent: var(--color-link);
+    border: var(--border);
+    border-block-start: 0.4em solid var(--color-accent);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    color: var(--color-ink);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: var(--space);
+    text-align: start;
+    transition: transform 150ms ease;
+
+    strong { color: var(--color-accent); font-size: var(--text-large); line-height: 1.15; }
+    @media (any-hover: hover) { &:hover { transform: translateY(-2px); } }
+  }
+  .series-guide__ages {
+    align-self: start;
+    background: var(--color-accent);
+    border-radius: 99px;
+    color: oklch(100% 0 0);
+    font-family: var(--font-sans);
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    padding: 0.15em 0.75em;
+    text-transform: uppercase;
+  }
+
+  /* Author, illustrator and series pages */
+  .page__body { max-inline-size: 60rem; margin-inline: auto; padding: 0 var(--space) var(--space-double); text-align: start; }
+  .person__header, .series-page__header { margin-block-end: var(--space-double); text-align: center; }
+  .person__header img { block-size: 12rem; border-radius: 50%; box-shadow: var(--shadow); inline-size: 12rem; margin: 0 auto var(--space); object-fit: cover; }
+  .person__name { font-size: var(--text-xx-large); margin: 0; }
+  .person__role, .series-page__meta { margin-inline: auto; max-inline-size: 40rem; a { text-decoration: underline; text-underline-offset: 0.15em; } }
+  .prose { margin-block: var(--space-double); max-inline-size: 42rem; margin-inline: auto; ol, ul { margin: 0 0 1rem 1.25rem; } p { margin-block-end: 0.9rem; } a { text-decoration: underline; text-underline-offset: 0.15em; } }
+  .person__books { text-align: center; h3 { margin-block-start: var(--space-double); } h3 a { color: inherit; } }
+  .series-page { --color-accent: var(--color-link); }
+  .series-list { list-style: none; margin: 0 !important; padding: 0; }
+  .series-list__item { border-block-start: var(--border); padding-block: var(--space); h3 { margin: 0.2rem 0 0.4rem; } p { margin: 0; } h3 a { text-decoration: none; } }
+}
+@layer modules {
+  .footer__nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: center; margin-block-end: var(--space); a { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; } }
 }

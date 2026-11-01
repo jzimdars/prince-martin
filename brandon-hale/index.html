@@ -1,0 +1,56 @@
+---
+layout: page
+title: "Brandon Hale, Author of the Prince Martin Books"
+description: "About Brandon Hale, author of the Prince Martin Epic chapter book series and the Little Prince Martin picture books, and the story behind Prince Martin."
+person: brandon
+jsonld: person-jsonld.html
+og_image: /assets/images/author-brandon-hale.jpg
+---
+{% assign asset_v = site.asset_version | default: "1" %}
+<article class="person">
+  <header class="person__header">
+    <picture>
+          <source srcset="{{ "/assets/images/author-brandon-hale.webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
+          <img src="{{ "/assets/images/author-brandon-hale.jpg" | relative_url }}?v={{ asset_v }}" alt="Author Brandon Hale portrait" width="2521" height="1755" fetchpriority="high" decoding="async">
+        </picture>
+    <p class="series__kicker">Author</p>
+    <h1 class="person__name">Brandon Hale</h1>
+    <p class="person__role">Author of <a href="{{ "/series/prince-martin-epic/" | relative_url }}">The Prince Martin Epic</a> and the <a href="{{ "/series/little-prince-martin/" | relative_url }}">Little Prince Martin Picture Books</a>, illustrated by <a href="{{ "/jason-zimdars/" | relative_url }}">Jason Zimdars</a>.</p>
+  </header>
+  <section class="prose">
+    <h2>About the Author</h2>
+    <p>When Brandon Hale was a young boy, he lived in South America. It was a great place to be a kid, and his mom let him play outside as much as he wanted. He had a dog named Okie, a slingshot, and an awesome treehouse his dad built. The tree was full of pink mangoes and home to chattering parrots, slow-moving sloths, and fat iguanas. Sometimes, he would encounter a lanky boa constrictor coiled on a branch.</p>
+    <p>When he was older, his family moved home to Oklahoma, and he began second grade. His favorite classes were Reading and History. His parents took him and his little sister to the lake a lot, and sometimes his uncles would take him hunting with their falcons. He loved Dr. Seuss, Treasure Island, The Swiss Family Robinson, Old Yeller, and The Hobbit.</p>
+    <p>Brandon went to school for 19 years, including college at Baylor University and law school at the University of Oklahoma College of Law. In 2001, a lovely lady agreed to marry Brandon. Now they have five great kids and live on the Oklahoma plains. He has 20 years of combined active and reserve Navy service and holds the rank of Captain. For his day job, he works in law enforcement. When he is not writing, Brandon enjoys spending time with his wife and kids, reading, hiking, biking, lifting weights, and visiting his parents’ 160-acre Lazy H ranch in northeastern Oklahoma to hunt, fish, shoot, and ride four-wheelers.</p>
+    <p>Brandon’s favorite authors are Patrick O’Brian, Walker Percy, C.S. Lewis, and J.R.R. Tolkien. His favorite books include The Lord of the Rings, A Canticle for Leibowitz, Lonesome Dove, The Road, The Stand, The Reverse of the Medal, A Christmas Carol, Love in the Ruins, Endurance: Shackleton’s Incredible Voyage.</p>
+    <p>His favorite movies are The Passion, The Shawshank Redemption, Master and Commander, It’s a Wonderful Life, A Few Good Men, High Noon, A Man for All Seasons, The Searchers, True Grit, and Braveheart.</p>
+    <p>His favorite children’s books are The Clown of God, Horton Hatches an Egg, Horton Hears a Who, Saint George and the Dragon, and The Black Falcon.</p>
+  </section>
+  <section class="prose">
+    <h2 id="story">The Story Behind the Prince Martin Epic Series</h2>
+    <p>Brandon Hale was deployed overseas with the military in 2015. As the days and weeks passed, he began to feel like he was losing his bond with his young son, Thomas. Until the deployment, Thomas had been Brandon’s trusty sidekick, but the boy had lost interest in talking to his overseas dad on the phone.</p>
+    <p>Then one day, Brandon had an idea. This time, when he called home, he asked if Thomas wanted to hear a story. A story about a Prince Martin, who was Brave, Loyal, and True. And Thomas was enchanted.</p>
+    <p>From then on, when Brandon could call home, Thomas would beg him to tell a Prince Martin story. Throughout the deployment, Brandon told Thomas many Prince Martin tales, and the boy even named some of the main characters like Sir Ray and John the timberwolf.</p>
+    <p>Upon returning home from deployment, Brandon’s wife encouraged him to turn his Prince Martin tales into children’s books. Brandon started to write. At first, he tried writing in prose. But prose seemed so dull. Then he remembered how much fun it is to read aloud stories that rhyme. He finally decided to write the books in a poetic style called anapestic tetrameter, hoping that parents and children would enjoy reading the stories aloud.</p>
+    <p>Brandon’s books in the Prince Martin Epic series can be read in order or as stand-alones:</p>
+    <ol>
+      <li><em>Prince Martin Wins His Sword</em></li>
+      <li><em>Prince Martin and the Thieves</em></li>
+      <li><em>Prince Martin and the Dragons</em></li>
+      <li><em>Prince Martin and the Cave Bear</em></li>
+      <li><em>Prince Martin and the Last Centaur</em></li>
+      <li><em>Prince Martin and the Pirates</em></li>
+      <li><em>Prince Martin and the Quest for the Bloodstone</em></li>
+    </ol>
+    <p>Most recently, he wrote Honesty Pays: A Little Prince Martin Picture Book for younger kids.</p>
+  </section>
+</article>
+<section class="person__books">
+  <h2>Books by Brandon Hale</h2>
+  <h3 class="series__kicker"><a href="{{ "/series/prince-martin-epic/" | relative_url }}">The Prince Martin Epic</a></h3>
+  {% include book-grid.html series="epic" ctx="author" width="180px" %}
+  <h3 class="series__kicker" style="--color-accent: var(--color-purple);"><a href="{{ "/series/little-prince-martin/" | relative_url }}">Little Prince Martin Picture Books</a></h3>
+  {% include book-grid.html series="picture" ctx="author" width="200px" %}
+  <h3 class="series__kicker" style="--color-accent: var(--color-lime-dark);">Coloring book</h3>
+  {% include book-grid.html series="coloring" ctx="author" width="180px" %}
+</section>

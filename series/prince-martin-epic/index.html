@@ -1,0 +1,26 @@
+---
+layout: page
+title: "The Prince Martin Epic: a 7-Book Illustrated Chapter Book Series for Boys"
+description: "The Prince Martin Epic is a 7-book series of illustrated, rhyming chapter books for boys by Brandon Hale, illustrated by Jason Zimdars. Ages 6+ (Book 1) to 10+ (Book 7)."
+series: epic
+og_image: /assets/images/books/covers/prince-martin-wins-his-sword-900.jpg
+---
+<article class="series-page">
+  <header class="series-page__header">
+    <p class="series__kicker">7-book series of chapter books</p>
+    <h1 class="series__title">The Prince Martin Epic Series</h1>
+    <p class="series__description">Illustrated chapter book series that turn boys into readers.</p>
+    <p class="series-page__meta">By <a href="{{ "/brandon-hale/" | relative_url }}">Brandon Hale</a> · Illustrated by <a href="{{ "/jason-zimdars/" | relative_url }}">Jason Zimdars</a> · Ages 6+ (Book 1) to 10+ (Book 7)</p>
+  </header>
+  {% include book-grid.html series="epic" ctx="series" width="180px" %}
+  <section class="prose">
+    <h2>Reading order</h2>
+    <p>Brandon’s books in the Prince Martin Epic series can be read in order or as stand-alones. The series grows with your son: each successive book gets longer and the plot more action-packed!</p>
+    {% include series-books-list.html series="epic" %}
+  </section>
+  <section class="prose">
+    {% include epic-pitch.html %}
+    <p>Want to know how it all began? Read <a href="{{ "/brandon-hale/#story" | relative_url }}">the story behind the Prince Martin Epic series</a>. For younger readers, try the <a href="{{ "/series/little-prince-martin/" | relative_url }}">Little Prince Martin picture books</a> (ages 3–7) and <a href="{{ "/products/the-prince-martin-epic-coloring-book/" | relative_url }}">The Prince Martin Epic Coloring Book</a>.</p>
+  </section>
+</article>
+{% include series-page-jsonld.html %}

@@ -9,6 +9,12 @@ permalink: /llms.txt
 
 Machine-readable catalog (titles, ISBNs, ages, retailer links): {{ "/books.json" | absolute_url }}
 Contact: info@princemartin.com
+
+## About
+- [Brandon Hale, author]({{ "/brandon-hale/" | absolute_url }}): biography and the story behind Prince Martin.
+- [Jason Zimdars, illustrator]({{ "/jason-zimdars/" | absolute_url }}): biography.
+- [The Prince Martin Epic]({{ "/series/prince-martin-epic/" | absolute_url }}): 7-book illustrated chapter book series, ages 6+ (Book 1) to 10+ (Book 7), in reading order.
+- [Little Prince Martin Picture Books]({{ "/series/little-prince-martin/" | absolute_url }}): picture book prequel series, ages 3–7.
 {% assign series_list = "epic,picture,coloring" | split: "," %}{% for s in series_list %}{% capture sname %}{% include series-name.html series=s %}{% endcapture %}
 ## {{ sname }}
 {% assign sbooks = site.data.books | where: "series", s | sort: "book_number" %}{% for b in sbooks %}{% assign pg = nil %}{% for cand in book_pages %}{% assign cslug = cand.url | split: "/" | last %}{% if cslug == b.slug %}{% assign pg = cand %}{% endif %}{% endfor %}

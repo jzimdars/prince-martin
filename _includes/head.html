@@ -13,7 +13,7 @@
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
   {%- endif %}
   <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:type" content="{% if page.layout == 'book' %}book{% else %}website{% endif %}">
+  <meta property="og:type" content="{% if page.layout == 'book' %}book{% elsif page.person %}profile{% else %}website{% endif %}">
   <meta property="og:title" content="{{ meta_title }}">
   <meta property="og:description" content="{{ meta_desc }}">
   <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
@@ -37,4 +37,5 @@
   {%- if page.layout == "home" %}
   {% include series-jsonld.html %}
   {%- endif %}
+  {% include analytics.html %}
 </head>

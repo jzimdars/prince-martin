@@ -1,0 +1,11 @@
+{%- assign sb_pages = site.pages | where: "layout", "book" -%}
+{%- assign sb_books = site.data.books | where: "series", include.series | sort: "book_number" -%}
+<ol class="series-list" role="list">
+  {%- for b in sb_books -%}{%- assign pg = nil -%}{%- for cand in sb_pages -%}{%- assign cslug = cand.url | split: "/" | last -%}{%- if cslug == b.slug -%}{%- assign pg = cand -%}{%- endif -%}{%- endfor %}
+  <li class="series-list__item">
+    <p class="series__kicker">Book {{ b.book_number }}{% if pg.age_range %} · Ages {% include age-label.html range=pg.age_range %}{% endif %}</p>
+    <h3><a href="{{ "/products/" | append: b.slug | append: "/" | relative_url }}">{{ pg.book_title | default: b.book_title }}</a></h3>
+    <p>{{ pg.description }}</p>
+  </li>
+  {%- endfor %}
+</ol>

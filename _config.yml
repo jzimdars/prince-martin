@@ -2,4 +2,8 @@ title: Prince Martin Books by Brandon Hale
 description: Boys will love the Prince Martin Epic illustrated chapter book series about Martin, the brave boy prince.
 baseurl: ""
 url: "https://www.princemartin.com"
-asset_version: "20261031c"
+asset_version: "20261031d"
+
+# Bookshop.org affiliate ID. Leave empty for plain links; set it (e.g. "12345")
+# and every Bookshop.org link on book pages becomes an affiliate link.
+bookshop_affiliate_id: ""

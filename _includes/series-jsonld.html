@@ -11,9 +11,9 @@
     {
       "@type": "BookSeries",
       "name": {{ sname | jsonify }},
-      "url": {{ "/" | absolute_url | jsonify }},
-      "author": { "@type": "Person", "name": "Brandon Hale" },
-      "illustrator": { "@type": "Person", "name": "Jason Zimdars" },
+      "@id": {{ site.data.series[s].url | absolute_url | append: "#series" | jsonify }},
+      "url": {{ site.data.series[s].url | absolute_url | jsonify }},
+      {% include people-refs.html %},
       "hasPart": [{% for b in sbooks %}
         { "@type": "Book", "name": {{ b.book_title | jsonify }}, "position": {{ b.book_number }}, "url": {{ "/products/" | append: b.slug | append: "/" | absolute_url | jsonify }}, "@id": {{ "/products/" | append: b.slug | append: "/" | absolute_url | append: "#book" | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
       ]

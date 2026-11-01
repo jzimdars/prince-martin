@@ -1,0 +1,22 @@
+{%- assign bm = include.book_meta -%}
+{%- assign sinfo = site.data.series[bm.series] -%}
+<section class="book__details" aria-labelledby="details-title">
+  <h2 id="details-title" class="txt-large">Book details</h2>
+  <dl class="book__facts">
+    {% if sinfo %}<div><dt>Series</dt><dd><a href="{{ sinfo.url | relative_url }}">{{ sinfo.name }}</a>, Book {{ bm.book_number }}</dd></div>{% endif %}
+    <div><dt>Author</dt><dd><a href="{{ "/brandon-hale/" | relative_url }}">Brandon Hale</a></dd></div>
+    <div><dt>Illustrator</dt><dd><a href="{{ "/jason-zimdars/" | relative_url }}">Jason Zimdars</a></dd></div>
+    {% if page.age_range %}<div><dt>Ages</dt><dd>{% include age-label.html range=page.age_range %}</dd></div>{% endif %}
+    {% if page.pages %}<div><dt>Pages</dt><dd>{{ page.pages }}</dd></div>{% endif %}
+  </dl>
+  {% if page.isbns %}
+  <h3 class="txt-medium" id="formats-title">Formats &amp; ISBNs</h3>
+  <table class="book__formats" aria-labelledby="formats-title">
+    <thead><tr><th scope="col">Format</th><th scope="col">ISBN-13</th></tr></thead>
+    <tbody>
+      {% for ed in page.isbns %}<tr><td>{{ ed.format }}</td><td><code>{{ ed.isbn }}</code></td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
