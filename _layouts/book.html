@@ -59,7 +59,7 @@ layout: default
       <h1 class="book__title">{{ page.book_title | default: page.title }}</h1>
       <div class="book__description">
         {{ content }}
-        {% if page.buy_links or page.amazon_formats %}
+        {% if page.amazon_formats %}
         <div class="book__actions">
           {% if page.amazon_formats %}
           <button type="button" class="btn btn--link" popovertarget="amazon-formats" aria-haspopup="dialog" aria-controls="amazon-formats">Buy at Amazon <span aria-hidden="true">▾</span></button>
@@ -73,9 +73,6 @@ layout: default
             <button type="button" class="btn btn--plain buy-menu__close" popovertarget="amazon-formats" popovertargetaction="hide">Cancel</button>
           </div>
           {% endif %}
-          {% for link in page.buy_links %}
-          <a class="btn {{ link.class }}" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
-          {% endfor %}
         </div>
         {% endif %}
         {% if page.other_retailers %}
