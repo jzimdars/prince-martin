@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /llms.txt
+---
+{%- assign book_pages = site.pages | where: "layout", "book" -%}
+# {{ site.title }}
+
+> {{ site.description }} Written by Brandon Hale and illustrated by Jason Zimdars.
+
+Machine-readable catalog (titles, ISBNs, ages, retailer links): {{ "/books.json" | absolute_url }}
+Contact: info@princemartin.com
+{% assign series_list = "epic,picture,coloring" | split: "," %}{% for s in series_list %}{% capture sname %}{% include series-name.html series=s %}{% endcapture %}
+## {{ sname }}
+{% assign sbooks = site.data.books | where: "series", s | sort: "book_number" %}{% for b in sbooks %}{% assign pg = nil %}{% for cand in book_pages %}{% assign cslug = cand.url | split: "/" | last %}{% if cslug == b.slug %}{% assign pg = cand %}{% endif %}{% endfor %}
+- [{{ pg.book_title | default: b.book_title }}]({{ "/products/" | append: b.slug | append: "/" | absolute_url }}): {{ pg.description }}{% if pg.isbns %} ISBNs: {% for e in pg.isbns %}{{ e.format }} {{ e.isbn }}{% unless forloop.last %}; {% endunless %}{% endfor %}.{% endif %}{% if pg.other_retailers %} Also at: {% for r in pg.other_retailers %}[{{ r.label }}]({{ r.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}.{% endif %}{% endfor %}
+{% endfor %}

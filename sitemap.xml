@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign pages = site.pages | where_exp: "p", "p.layout == 'home' or p.layout == 'book'" | sort: "url" %}
+{%- for p in pages %}
+  <url><loc>{{ p.url | replace: 'index.html', '' | absolute_url }}</loc></url>
+{%- endfor %}
+</urlset>

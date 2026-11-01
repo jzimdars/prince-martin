@@ -1,0 +1,23 @@
+{%- assign all_books = site.pages | where: "layout", "book" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": {{ site.title | jsonify }},
+      "url": {{ "/" | absolute_url | jsonify }}
+    }{% assign series_list = "epic,picture" | split: "," %}{% for s in series_list %}{% capture sname %}{% include series-name.html series=s %}{% endcapture %}{% assign sbooks = site.data.books | where: "series", s | sort: "book_number" %},
+    {
+      "@type": "BookSeries",
+      "name": {{ sname | jsonify }},
+      "url": {{ "/" | absolute_url | jsonify }},
+      "author": { "@type": "Person", "name": "Brandon Hale" },
+      "illustrator": { "@type": "Person", "name": "Jason Zimdars" },
+      "hasPart": [{% for b in sbooks %}
+        { "@type": "Book", "name": {{ b.book_title | jsonify }}, "position": {{ b.book_number }}, "url": {{ "/products/" | append: b.slug | append: "/" | absolute_url | jsonify }}, "@id": {{ "/products/" | append: b.slug | append: "/" | absolute_url | append: "#book" | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% endfor %}
+  ]
+}
+</script>
