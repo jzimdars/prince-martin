@@ -74,6 +74,14 @@ layout: default
           {% endfor %}
         </div>
         {% endif %}
+        {% if page.other_retailers %}
+        <p class="book__retailers">Also available at
+          {%- for r in page.other_retailers -%}
+          {%- if forloop.first %} {% elsif forloop.last %}{% if forloop.length > 2 %},{% endif %} and {% else %}, {% endif -%}
+          <a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>
+          {%- endfor -%}.
+        </p>
+        {% endif %}
         {% if page.show_byline != false %}
         <div class="series__byline fill-blue pad-block pad-inline-double border-radius margin-block-double">
           <h3 class="margin-none txt-large">Is your son a reluctant reader?</h3>

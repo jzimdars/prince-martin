@@ -84,6 +84,24 @@
     text-decoration: underline;
   }
 
+  .book__retailers {
+    color: var(--color-ink);
+    opacity: 0.8;
+    font-size: 0.9em;
+    margin-block-start: var(--space);
+    text-align: center;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    a:hover {
+      color: var(--color-link);
+    }
+  }
+
   .book__note {
     font-size: var(--text-x-small);
     text-transform: uppercase;
