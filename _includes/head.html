@@ -4,6 +4,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  {%- assign meta_desc = page.description | default: site.description -%}
+  {%- assign meta_title = page.title | default: site.title -%}
+  {%- if page.layout == "book" -%}{%- assign og_slug = page.url | split: "/" | last -%}{%- assign og_image = "/assets/images/books/covers/" | append: og_slug | append: "-900.jpg" -%}{%- else -%}{%- assign og_image = page.og_image | default: "/assets/images/og-default.jpg" -%}{%- endif %}
+  {%- if page.url == "/404.html" %}
+  <meta name="robots" content="noindex">
+  {%- else %}
+  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  {%- endif %}
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:type" content="{% if page.layout == 'book' %}book{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ meta_title }}">
+  <meta property="og:description" content="{{ meta_desc }}">
+  <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  <meta property="og:image" content="{{ og_image | absolute_url }}">
+  <meta property="og:image:alt" content="{{ page.cover_alt | default: site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ meta_title }}">
+  <meta name="twitter:description" content="{{ meta_desc }}">
+  <meta name="twitter:image" content="{{ og_image | absolute_url }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/reset.css" | relative_url }}?v={{ asset_v }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/base.css" | relative_url }}?v={{ asset_v }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/utilities.css" | relative_url }}?v={{ asset_v }}">
@@ -15,4 +34,7 @@
   <link rel="stylesheet" href="{{ "/assets/stylesheets/buttons.css" | relative_url }}?v={{ asset_v }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/popover.css" | relative_url }}?v={{ asset_v }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/book.css" | relative_url }}?v={{ asset_v }}">
+  {%- if page.layout == "home" %}
+  {% include series-jsonld.html %}
+  {%- endif %}
 </head>

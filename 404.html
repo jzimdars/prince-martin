@@ -1,0 +1,23 @@
+---
+layout: default
+title: Page not found | Prince Martin Books by Brandon Hale
+description: Sorry, that page couldn't be found. Browse the Prince Martin books instead.
+permalink: /404.html
+sitemap: false
+---
+<main id="main">
+  <section class="series pad-inline">
+    <div class="container">
+      <p class="series__kicker">404 — Page not found</p>
+      <h1 class="series__title">This page has wandered off the map.</h1>
+      <p class="series__description">The page you were looking for doesn’t exist. Try one of the books below, or <a href="{{ "/" | relative_url }}">head back to the homepage</a>.</p>
+      {% assign series_list = "epic,picture,coloring" | split: "," %}{% for s in series_list %}{% capture sname %}{% include series-name.html series=s %}{% endcapture %}
+      <h2 class="txt-large margin-block-start">{{ sname }}</h2>
+      <ul style="list-style: none; padding: 0;">
+        {% assign sbooks = site.data.books | where: "series", s | sort: "book_number" %}{% for b in sbooks %}
+        <li><a href="{{ "/products/" | append: b.slug | append: "/" | relative_url }}">{{ b.book_title }}</a></li>{% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+  </section>
+</main>

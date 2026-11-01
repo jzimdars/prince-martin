@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /books.json
+---
+{%- assign book_pages = site.pages | where: "layout", "book" -%}
+{
+  "site": {{ site.title | jsonify }},
+  "url": {{ "/" | absolute_url | jsonify }},
+  "author": "Brandon Hale",
+  "illustrator": "Jason Zimdars",
+  "contact": "info@princemartin.com",
+  "books": [{% for b in site.data.books %}{% assign pg = nil %}{% for cand in book_pages %}{% assign cslug = cand.url | split: "/" | last %}{% if cslug == b.slug %}{% assign pg = cand %}{% endif %}{% endfor %}{% capture sname %}{% include series-name.html series=b.series %}{% endcapture %}
+    {
+      "title": {{ pg.book_title | default: b.book_title | jsonify }},
+      "series": {{ sname | jsonify }},
+      "series_position": {{ b.book_number }},
+      "url": {{ "/products/" | append: b.slug | append: "/" | absolute_url | jsonify }},
+      "cover": {{ "/assets/images/books/covers/" | append: b.slug | append: "-900.jpg" | absolute_url | jsonify }},
+      "description": {{ pg.description | jsonify }},
+      "age_range": {{ pg.age_range | jsonify }},
+      "pages": {{ pg.pages | jsonify }},
+      "editions": {{ pg.isbns | jsonify }},
+      "amazon": {{ pg.amazon_formats | jsonify }},
+      "other_retailers": {{ pg.other_retailers | jsonify }}
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}

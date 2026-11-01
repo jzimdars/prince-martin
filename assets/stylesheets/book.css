@@ -133,3 +133,7 @@
     flex-basis: 25%;
   }
 }
+
+.book__cover-picture {
+  display: contents;
+}
