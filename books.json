@@ -15,7 +15,7 @@
       "age_range": "6-",
       "pages": 55,
       "editions": [{"format":"Hardcover","isbn":"9781732127845"},{"format":"Paperback (Full Color)","isbn":"9781548835712"},{"format":"Paperback (Grayscale)","isbn":"9781732127807"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1732127840"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1548835714"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/1732127808"},{"label":"Kindle","url":"https://www.amazon.com/dp/B0745ZKDCB"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B07C4GCJVN"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1732127840?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1548835714?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/1732127808?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B0745ZKDCB?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B07C4GCJVN?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-wins-his-sword-jason-zimdars/1130008954?ean=9781548835712"},{"label":"Walmart","url":"https://www.walmart.com/ip/175551500"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-wins-his-sword-a-classic-tale-about-a-boy-who-discovers-the-true-meaning-of-courage-grit-and-friendship-full-color-art-edition-brand/3eded1b2dbe20978?ean=9781548835712"}]
     },
     {
@@ -28,7 +28,7 @@
       "age_range": "7-",
       "pages": 93,
       "editions": [{"format":"Hardcover","isbn":"9781732127852"},{"format":"Paperback (Full Color)","isbn":"9781979571852"},{"format":"Paperback (Grayscale)","isbn":"9781732127814"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1732127859"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1979571856"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/1732127816"},{"label":"Kindle","url":"https://www.amazon.com/dp/B077WLVT21"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B07G9LXQ8B"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1732127859?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1979571856?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/1732127816?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B077WLVT21?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B07G9LXQ8B?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-and-the-thieves-brandon-hale/1128289229?ean=9781732127852"},{"label":"Walmart","url":"https://www.walmart.com/ip/202362612"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-and-the-thieves-a-brave-boy-a-valiant-knight-and-a-timeless-tale-of-courage-and-compassion-brandon-hale/b915cc63027a82b8?ean=9781732127852"}]
     },
     {
@@ -41,7 +41,7 @@
       "age_range": "7-",
       "pages": 98,
       "editions": [{"format":"Hardcover","isbn":"9781732127838"},{"format":"Paperback (Full Color)","isbn":"9781732127821"},{"format":"Paperback (Grayscale)","isbn":"9781737657651"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1732127832"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1732127824"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/1737657651"},{"label":"Kindle","url":"https://www.amazon.com/dp/B07DZS2TWZ"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B07GFVGKM7"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1732127832?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1732127824?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/1737657651?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B07DZS2TWZ?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B07GFVGKM7?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-and-the-dragons-brandon-hale/1129032079?ean=9781732127821"},{"label":"Walmart","url":"https://www.walmart.com/ip/416240139"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-and-the-dragons-a-classic-adventure-book-about-a-boy-a-knight-the-true-meaning-of-loyalty-brandon-hale/2b756ce1d3f02c97?ean=9781732127821"}]
     },
     {
@@ -54,7 +54,7 @@
       "age_range": "8-",
       "pages": 172,
       "editions": [{"format":"Hardcover","isbn":"9781732127869"},{"format":"Paperback (Full Color)","isbn":"9781732127876"},{"format":"Paperback (Grayscale)","isbn":"9781737657637"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1732127867"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1732127875"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/1737657635"},{"label":"Kindle","url":"https://www.amazon.com/dp/B07RCZ5RD7"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B07S97VRDS"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1732127867?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1732127875?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/1737657635?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B07RCZ5RD7?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B07S97VRDS?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-and-the-cave-bear-brandon-hale/1131557808?ean=9781732127876"},{"label":"Walmart","url":"https://www.walmart.com/ip/496332456"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-and-the-cave-bear-two-kids-colossal-courage-and-a-classic-quest-brandon-hale/c441acc62b694820?ean=9781732127876"}]
     },
     {
@@ -67,7 +67,7 @@
       "age_range": "8-",
       "pages": 194,
       "editions": [{"format":"Hardcover","isbn":"9781732127890"},{"format":"Paperback (Full Color)","isbn":"9781732127883"},{"format":"Paperback (Grayscale)","isbn":"9781737657620"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1732127891"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1732127883"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/1737657627"},{"label":"Kindle","url":"https://www.amazon.com/dp/B087PJ3K8S"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B0887PG43Z"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1732127891?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1732127883?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/1737657627?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B087PJ3K8S?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B0887PG43Z?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-and-the-last-centaur-brandon-hale/1136938472?ean=9781732127883"},{"label":"Walmart","url":"https://www.walmart.com/ip/133279687"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-and-the-last-centaur-a-tale-of-two-brothers-a-courageous-kid-and-the-duel-for-the-desert-brandon-hale/ebb7a08a190faf50?ean=9781732127883"}]
     },
     {
@@ -80,7 +80,7 @@
       "age_range": "9-",
       "pages": 163,
       "editions": [{"format":"Hardcover","isbn":"9781737657613"},{"format":"Paperback (Full Color)","isbn":"9781737657606"},{"format":"Paperback (Grayscale)","isbn":"9781737657644"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1737657619"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1737657600"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/1737657643"},{"label":"Kindle","url":"https://www.amazon.com/dp/B09C3Z2T7Z"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B0CXD94XGV"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1737657619?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1737657600?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/1737657643?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B09C3Z2T7Z?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B0CXD94XGV?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-and-the-pirates-brandon-hale/1140042797?ean=9781737657606"},{"label":"Walmart","url":"https://www.walmart.com/ip/255363140"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-and-the-pirates-being-a-swashbuckling-tale-of-a-brave-boy-bloodthirsty-buccaneers-and-the-solemn-mysteries-of-the-ancient-order-of-the/1f068ad22702e048?ean=9781737657606"}]
     },
     {
@@ -93,7 +93,7 @@
       "age_range": "10-",
       "pages": 243,
       "editions": [{"format":"Hardcover","isbn":"9781737657682"},{"format":"Paperback (Full Color)","isbn":"9781737657675"},{"format":"Paperback (Grayscale)","isbn":"9781737657668"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/1737657686"},{"label":"Paperback (Full Color)","url":"https://www.amazon.com/dp/1737657678"},{"label":"Paperback (Grayscale)","url":"https://www.amazon.com/dp/173765766X"},{"label":"Kindle","url":"https://www.amazon.com/dp/B0BTRX347X"},{"label":"Audiobook","url":"https://www.amazon.com/dp/B0CXDD7RWS"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/1737657686?tag=thinkcage-20" }, { "label": "Paperback (Full Color)", "url": "https://www.amazon.com/dp/1737657678?tag=thinkcage-20" }, { "label": "Paperback (Grayscale)", "url": "https://www.amazon.com/dp/173765766X?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B0BTRX347X?tag=thinkcage-20" }, { "label": "Audiobook", "url": "https://www.amazon.com/dp/B0CXDD7RWS?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/prince-martin-and-the-quest-for-the-bloodstone-brandon-hale/1143052588?ean=9781737657675"},{"label":"Walmart","url":"https://www.walmart.com/ip/1305764419"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/prince-martin-and-the-quest-for-the-bloodstone-a-heroic-saga-about-faithfulness-fortitude-and-redemption-brandon-hale/e8a4ba72705d4571?ean=9781737657675"}]
     },
     {
@@ -106,7 +106,7 @@
       "age_range": "3-7",
       "pages": 32,
       "editions": [{"format":"Hardcover","isbn":"9798987762608"},{"format":"Paperback","isbn":"9798987762615"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/B0D69779R2"},{"label":"Paperback","url":"https://www.amazon.com/dp/B0D59WKTT2"},{"label":"Kindle","url":"https://www.amazon.com/dp/B0D53CQWS7"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/B0D69779R2?tag=thinkcage-20" }, { "label": "Paperback", "url": "https://www.amazon.com/dp/B0D59WKTT2?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B0D53CQWS7?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/honesty-pays-brandon-hale/1145702764?ean=9798987762615"},{"label":"Walmart","url":"https://www.walmart.com/ip/6219406159"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/honesty-pays-a-little-prince-martin-picture-book-brandon-hale/078073ad672999de?ean=9798987762615"}]
     },
     {
@@ -119,7 +119,7 @@
       "age_range": "3-7",
       "pages": 34,
       "editions": [{"format":"Hardcover","isbn":"9798987762639"},{"format":"Paperback","isbn":"9798987762622"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/B0DP5R54M4"},{"label":"Paperback","url":"https://www.amazon.com/dp/B0DP4LPP74"},{"label":"Kindle","url":"https://www.amazon.com/dp/B0DC5SBN4R"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/B0DP5R54M4?tag=thinkcage-20" }, { "label": "Paperback", "url": "https://www.amazon.com/dp/B0DP4LPP74?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B0DC5SBN4R?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/little-prince-martin-and-the-seven-labors-brandon-hale/1146611716?ean=9798987762622"},{"label":"Walmart","url":"https://www.walmart.com/ip/14413872989"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/little-prince-martin-and-the-seven-labors-small-boys-can-do-big-jobs-brandon-hale/b3e36e66f1781e9c?ean=9798987762622"}]
     },
     {
@@ -132,7 +132,7 @@
       "age_range": "3-7",
       "pages": 34,
       "editions": [{"format":"Hardcover","isbn":"9798987762653"},{"format":"Paperback","isbn":"9798987762646"}],
-      "amazon": [{"label":"Hardcover","url":"https://www.amazon.com/dp/B0FSC95RSZ"},{"label":"Paperback","url":"https://www.amazon.com/dp/B0FRZ2TZGX"},{"label":"Kindle","url":"https://www.amazon.com/dp/B0FRYDYGF7"}],
+      "amazon": [{ "label": "Hardcover", "url": "https://www.amazon.com/dp/B0FSC95RSZ?tag=thinkcage-20" }, { "label": "Paperback", "url": "https://www.amazon.com/dp/B0FRZ2TZGX?tag=thinkcage-20" }, { "label": "Kindle", "url": "https://www.amazon.com/dp/B0FRYDYGF7?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/little-prince-martin-braves-the-night-to-save-the-day-brandon-hale/1148371164?ean=9798987762646"},{"label":"Walmart","url":"https://www.walmart.com/ip/17927319835"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/little-prince-martin-braves-the-night-to-save-the-day-a-picture-book/b353d86f544d3599?ean=9798987762646"}]
     },
     {
@@ -145,7 +145,7 @@
       "age_range": "5-12",
       "pages": 170,
       "editions": [{"format":"Paperback","isbn":"9781737657699"}],
-      "amazon": [{"label":"Paperback","url":"https://www.amazon.com/dp/1737657694"}],
+      "amazon": [{ "label": "Paperback", "url": "https://www.amazon.com/dp/1737657694?tag=thinkcage-20" }],
       "other_retailers": [{"label":"Barnes & Noble","url":"https://www.barnesandnoble.com/w/the-prince-martin-epic-coloring-book-brandon-hale/1143580493?ean=9781737657699"},{"label":"Walmart","url":"https://www.walmart.com/ip/2437505414"},{"label":"Bookshop.org","url":"https://bookshop.org/p/books/the-prince-martin-epic-coloring-book-action-packed-scenes-from-the-virtue-building-adventure-series-about-castles-and-quests-knights-and-knaves-and/d60ccc8c450519b8?ean=9781737657699"}]
     }
   ]
