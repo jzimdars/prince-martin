@@ -19,7 +19,7 @@ layout: default
         <source type="image/webp" srcset="{{ cover_base | append: "-600.webp" | relative_url }}?v={{ asset_v }} 600w, {{ cover_base | append: "-900.webp" | relative_url }}?v={{ asset_v }} 900w{% if book_meta.cover_width >= 1350 %}, {{ cover_base | append: "-1350.webp" | relative_url }}?v={{ asset_v }} 1350w{% endif %}" sizes="(min-width: 48em) 40vw, 92vw">
         <img class="book__cover" src="{{ cover_base | append: "-900.jpg" | relative_url }}?v={{ asset_v }}" srcset="{{ cover_base | append: "-900.jpg" | relative_url }}?v={{ asset_v }} 900w, {{ page.cover_image | relative_url }}?v={{ asset_v }} {{ book_meta.cover_width }}w" sizes="(min-width: 48em) 40vw, 92vw" alt="{{ page.cover_alt }}" width="{{ book_meta.cover_width | default: page.cover_width }}" height="{{ book_meta.cover_height | default: page.cover_height }}" decoding="async" fetchpriority="high" style="view-transition-name: {{ page.view_transition_name }};">
       </picture>
-      {% if book_meta.series == "epic" or book_meta.series == "picture" %}{% capture badge_id %}cover-{{ book_meta.book_number }}{% endcapture %}{% include book-badge.html n=book_meta.book_number id=badge_id %}{% endif %}
+      {% if book_meta.series == "epic" or book_meta.series == "picture" %}{% capture badge_id %}cover-{{ book_meta.book_number }}{% endcapture %}{% include book-badge.html n=book_meta.book_number id=badge_id series=book_meta.series %}{% endif %}
       </div>
       {% if page.gallery or page.cover_image %}
       <div class="book__gallery">
