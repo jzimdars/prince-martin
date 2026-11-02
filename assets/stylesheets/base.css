@@ -152,6 +152,10 @@
     }
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -163,7 +167,6 @@
     interpolate-size: allow-keywords;
     line-height: 1.375;
     max-inline-size: 100vw;
-    scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     text-size-adjust: none;
   }
