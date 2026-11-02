@@ -156,20 +156,21 @@
 
   .book-badge--picture { --badge-ink: var(--color-purple); }
 
-  .book-badge__hi { stop-color: oklch(100% 0 0); }
-  .book-badge__mid { stop-color: color-mix(in oklch, var(--badge-ink) 10%, white); }
-  .book-badge__lo { stop-color: color-mix(in oklch, var(--badge-ink) 26%, white); }
-  .book-badge__rim { fill: none; stroke: oklch(100% 0 0 / 70%); stroke-width: 1.5; }
+  .book-badge__hi { stop-color: color-mix(in oklch, var(--badge-ink) 82%, white); }
+  .book-badge__mid { stop-color: var(--badge-ink); }
+  .book-badge__lo { stop-color: color-mix(in oklch, var(--badge-ink) 72%, black); }
+  .book-badge__ring { fill: oklch(98% 0.01 90); }
+  .book-badge__rim { fill: none; stroke: oklch(100% 0 0 / 30%); stroke-width: 1; }
 
   .book-badge__label,
   .book-badge__num {
-    fill: color-mix(in oklch, var(--badge-ink) 70%, black);
+    fill: oklch(100% 0 0);
     font-family: var(--font-sans);
     font-weight: 800;
   }
 
-  .book-badge__label { font-size: 10px; letter-spacing: 3px; }
-  .book-badge__num { font-size: 44px; letter-spacing: -1px; }
+  .book-badge__label { font-size: 9.5px; letter-spacing: 3px; }
+  .book-badge__num { font-size: 42px; letter-spacing: -1px; }
 
   .book__cover-wrap {
     position: relative;
