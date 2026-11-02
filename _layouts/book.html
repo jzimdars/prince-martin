@@ -4,10 +4,7 @@ layout: default
 {% assign asset_v = site.asset_version | default: "1" %}
 {% assign book_meta = site.data.books | where: "view_transition_name", page.view_transition_name | first %}
 <main id="main">
-  <section class="hero">
-    <div class="container">
-      <header class="txt-align-center">
-        <a href="{{ "/" | relative_url }}" id="book-back" class="btn txt-medium margin-block">← Back to home</a>
+  {% capture back_link %}<a href="{{ "/" | relative_url }}" id="book-back" class="btn txt-medium margin-block">← Back to home</a>
         <script>
           (function () {
             var link = document.getElementById("book-back");
@@ -35,10 +32,8 @@ layout: default
               }
             });
           })();
-        </script>
-      </header>
-    </div>
-  </section>
+        </script>{% endcapture %}
+  {% include back-band.html content=back_link %}
   <div class="container book__detail">
     <div>
       {% assign cover_base = "/assets/images/books/covers/" | append: book_meta.slug %}

@@ -1,0 +1,12 @@
+{%- comment -%}
+  Dark, gold-topped band that holds a subpage's back link.
+  Shared by the book layout and the page layout (series, bios, articles).
+  Params: content (link markup), label (optional aria-label; renders a nav when set).
+{%- endcomment -%}
+<section class="hero">
+    <div class="container">
+      {% if include.label %}<nav class="txt-align-center" aria-label="{{ include.label }}">{% else %}<header class="txt-align-center">{% endif %}
+        {{ include.content }}
+      {% if include.label %}</nav>{% else %}</header>{% endif %}
+    </div>
+  </section>
