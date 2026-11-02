@@ -6,4 +6,4 @@ asset_version: "20261031d"
 
 # Bookshop.org affiliate ID. Leave empty for plain links; set it (e.g. "12345")
 # and every Bookshop.org link on book pages becomes an affiliate link.
-bookshop_affiliate_id: ""
+bookshop_affiliate_id: "130776"
