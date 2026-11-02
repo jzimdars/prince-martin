@@ -54,6 +54,9 @@ layout: default
         {% endif %}
       </div>
       {% endif %}
+      {% if page.show_byline != false %}
+      {% include epic-pitch.html %}
+      {% endif %}
     </div>
     <div>
       {% assign series_info = site.data.series[book_meta.series] %}
@@ -102,9 +105,6 @@ layout: default
           </figure>
           {% endfor %}
         </section>
-        {% endif %}
-        {% if page.show_byline != false %}
-        {% include epic-pitch.html %}
         {% endif %}
       </div>
     </div>

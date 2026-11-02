@@ -257,5 +257,7 @@
     .book__detail > div > .series__byline { grid-column: 1 / -1; }
     .book__description > h2:first-child { margin-block-start: var(--space-double); }
     .book__gallery { order: 1; }
+    /* Pitch lives in the left column on desktop; on phones keep it after the gallery */
+    .book__detail > div > .series__byline { order: 2; }
   }
 }
