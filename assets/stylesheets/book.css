@@ -163,8 +163,8 @@
     font-weight: 800;
   }
 
-  .book-badge__label { font-size: 16px; letter-spacing: 2.5px; }
-  .book-badge__num { font-family: var(--font-serif); font-size: 40px; }
+  .book-badge__label { font-size: 11.5px; letter-spacing: 2.5px; }
+  .book-badge__num { font-family: var(--font-serif); font-size: 34px; line-height: 1; }
 
   .book__cover-wrap {
     position: relative;

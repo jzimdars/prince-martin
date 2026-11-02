@@ -11,8 +11,8 @@
       <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
       <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }};">
     </picture>
-    {% if book.series == "epic" %}{% capture badge_id %}{{ include.ctx }}-{{ book.book_number }}{% endcapture %}{% include book-badge.html n=book.book_number id=badge_id %}{% endif %}
-    {% if book.series == "epic" %}<span class="visually-hidden">, Book {{ book.book_number }}</span>{% endif %}
+    {% if book.series == "epic" or book.series == "picture" %}{% capture badge_id %}{{ include.ctx }}-{{ book.series }}-{{ book.book_number }}{% endcapture %}{% include book-badge.html n=book.book_number id=badge_id %}{% endif %}
+    {% if book.series == "epic" or book.series == "picture" %}<span class="visually-hidden">, Book {{ book.book_number }}</span>{% endif %}
   </a>
   </li>
   {% endfor %}
