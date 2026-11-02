@@ -1,0 +1,5 @@
+{%- assign asset_v = site.asset_version | default: "1" -%}
+<picture>
+  <source srcset="{{ "/assets/images/illustrating/" | append: include.src | append: ".webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
+  <img src="{{ "/assets/images/illustrating/" | append: include.src | append: ".jpg" | relative_url }}?v={{ asset_v }}" alt="{{ include.alt }}" width="{{ include.w }}" height="{{ include.h }}" loading="{{ include.loading | default: "lazy" }}" decoding="async">
+</picture>
