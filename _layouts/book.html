@@ -74,7 +74,7 @@ layout: default
             <h2 id="amazon-formats-title" class="buy-menu__title">Choose a format</h2>
             <ul class="buy-menu__list" role="list">
               {% for format in page.amazon_formats %}
-              <li><a class="btn buy-menu__link" href="{{ format.url }}" target="_blank" rel="noopener">{{ format.label }}<span class="visually-hidden"> on Amazon (opens in a new tab)</span></a></li>
+              <li><a class="btn buy-menu__link" href="{{ format.url }}" target="_blank" rel="noopener" data-goatcounter-click="buy-amazon-{{ format.label | slugify }}-{{ book_meta.slug }}" data-goatcounter-title="Amazon {{ format.label }}: {{ page.book_title | escape }}">{{ format.label }}<span class="visually-hidden"> on Amazon (opens in a new tab)</span></a></li>
               {% endfor %}
             </ul>
             <button type="button" class="btn btn--plain buy-menu__close" popovertarget="amazon-formats" popovertargetaction="hide">Cancel</button>
@@ -86,7 +86,7 @@ layout: default
         <p class="book__retailers">Also available at
           {%- for r in page.other_retailers -%}
           {%- if forloop.first %} {% elsif forloop.last %}{% if forloop.length > 2 %},{% endif %} and {% else %}, {% endif -%}
-          <a href="{% if r.label == "Bookshop.org" %}{% include bookshop-url.html url=r.url %}{% else %}{{ r.url }}{% endif %}" target="_blank" rel="noopener">{{ r.label }}</a>
+          <a href="{% if r.label == "Bookshop.org" %}{% include bookshop-url.html url=r.url %}{% else %}{{ r.url }}{% endif %}" target="_blank" rel="noopener" data-goatcounter-click="buy-{{ r.label | slugify }}-{{ book_meta.slug }}" data-goatcounter-title="{{ r.label | escape }}: {{ page.book_title | escape }}">{{ r.label }}</a>
           {%- endfor -%}.
         </p>
         {% endif %}
