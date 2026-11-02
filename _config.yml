@@ -6,4 +6,6 @@ asset_version: "20261031d"
 
 # Bookshop.org affiliate ID. Leave empty for plain links; set it (e.g. "12345")
 # and every Bookshop.org link on book pages becomes an affiliate link.
+# Amazon Associates tracking ID, appended as tag= to every Amazon buy link.
+amazon_associate_tag: "thinkcage-20"
 bookshop_affiliate_id: "130776"
