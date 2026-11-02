@@ -42,7 +42,35 @@
   <section class="hero">
     <div class="container">
       <header class="txt-align-center">
-        <a href="#" onclick="window.history.back()" class="btn txt-medium margin-block">← Back</a>
+        <a href="/" id="book-back" class="btn txt-medium margin-block">← Back to home</a>
+        <script>
+          (function () {
+            var link = document.getElementById("book-back");
+            var places = {
+              "/": "home",
+              "/series/prince-martin-epic/": "The Prince Martin Epic",
+              "/series/little-prince-martin/": "Little Prince Martin Picture Books",
+              "/brandon-hale/": "Brandon Hale",
+              "/jason-zimdars/": "Jason Zimdars"
+            };
+            var ref;
+            try { ref = document.referrer ? new URL(document.referrer) : null; } catch (e) { ref = null; }
+            if (!ref) return;
+            var host = ref.hostname.replace(/^www\./, "");
+            var sameSite = ref.host === location.host || host === "princemartin.com";
+            var path = ref.pathname.replace(/index\.html$/, "");
+            if (!sameSite || path === location.pathname || !places[path]) return;
+            link.href = path + ref.search;
+            link.textContent = "← Back to " + places[path];
+            // Return via history when we came straight from there, so the listing keeps its scroll position.
+            link.addEventListener("click", function (event) {
+              if (history.length > 1 && document.referrer === ref.href) {
+                event.preventDefault();
+                history.back();
+              }
+            });
+          })();
+        </script>
       </header>
     </div>
   </section>
@@ -447,7 +475,18 @@
       
     </div>
     <div class="margin-block txt-align-center">
-      <a href="#main" class="btn">↑ Back to top</a>
+      <a href="#main" class="btn" data-back-to-top>↑ Back to top</a>
+      <script>
+        document.querySelector("[data-back-to-top]").addEventListener("click", function (event) {
+          event.preventDefault();
+          var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+          var main = document.getElementById("main");
+          main.setAttribute("tabindex", "-1");
+          main.focus({ preventScroll: true });
+          if (location.hash) history.replaceState(history.state, "", location.pathname + location.search);
+        });
+      </script>
     </div>
   </section>
   
