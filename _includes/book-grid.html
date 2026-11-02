@@ -1,0 +1,19 @@
+{%- comment -%} Grid of book covers. include.series = epic|picture|coloring; include.ctx = unique id prefix; include.width = optional card width {%- endcomment -%}
+{% assign asset_v = site.asset_version | default: "1" %}
+{% assign grid_books = site.data.books | where: "series", include.series | sort: "book_number" %}
+<ol class="books-index" role="list"{% if include.width %} style="--cover-width: {{ include.width }}"{% endif %}>
+  {% for book in grid_books %}
+  <li>
+  <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
+    {% assign cover_thumb = book.cover_thumb | default: book.cover %}
+    {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
+    <picture>
+      <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
+      <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }};">
+    </picture>
+    {% if book.series == "epic" or book.series == "picture" %}{% capture badge_id %}{{ include.ctx }}-{{ book.series }}-{{ book.book_number }}{% endcapture %}{% include book-badge.html n=book.book_number id=badge_id series=book.series %}{% endif %}
+    {% if book.series == "epic" or book.series == "picture" %}<span class="visually-hidden">, Book {{ book.book_number }}</span>{% endif %}
+  </a>
+  </li>
+  {% endfor %}
+</ol>

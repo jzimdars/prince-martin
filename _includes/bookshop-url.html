@@ -1,0 +1,6 @@
+{%- comment -%}
+  Bookshop.org link. If site.bookshop_affiliate_id is set in _config.yml, links
+  become affiliate links (https://bookshop.org/a/<id>/<isbn>); otherwise the
+  plain product URL is used. include.url = product URL containing ?ean=<isbn>.
+{%- endcomment -%}
+{%- if site.bookshop_affiliate_id and site.bookshop_affiliate_id != "" -%}{%- assign bs_isbn = include.url | split: "ean=" | last -%}https://bookshop.org/a/{{ site.bookshop_affiliate_id }}/{{ bs_isbn }}{%- else -%}{{ include.url }}{%- endif -%}

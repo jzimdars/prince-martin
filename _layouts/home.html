@@ -32,25 +32,31 @@ layout: default
     </div>
   </section>
 
+  <section class="series-guide pad-inline" aria-labelledby="series-guide-title">
+    <div class="container series-guide__inner">
+      <h2 id="series-guide-title" class="series-guide__title">Two series, one brave hero</h2>
+      <div class="series-guide__cards">
+        <a class="series-guide__card" href="{{ "/series/little-prince-martin/" | relative_url }}" style="--color-accent: var(--color-purple);">
+          <span class="series-guide__ages">Ages 3–7</span>
+          <strong>Little Prince Martin Picture Books</strong>
+          <span>Picture books for younger readers with playful rhymes, bold artwork, and brave hearts.</span>
+        </a>
+        <a class="series-guide__card" href="{{ "/series/prince-martin-epic/" | relative_url }}">
+          <span class="series-guide__ages">Ages 6+ to 10+</span>
+          <strong>The Prince Martin Epic</strong>
+          <span>A 7-book series of illustrated chapter books. Start with Book 1 (ages 6+); each successive book gets longer and the plot more action-packed, up to Book 7 (ages 10+). Each book can be read as a stand-alone.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="series" id="start">
     <div class="container">
       <p class="series__kicker">7-book series of chapter books</p>
       <h2 class="series__title">The Prince Martin Epic Series</h2>
       <p class="series__description">Illustrated chapter book series that turn boys into readers.</p>
-      <div class="books-index">
-        {% assign epic_books = site.data.books | where: "series", "epic" | sort: "book_number" %}
-        {% for book in epic_books %}
-        <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
-          {% assign cover_thumb = book.cover_thumb | default: book.cover %}
-          {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
-          <picture>
-            <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
-            <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
-          </picture>
-          <span>{{ book.book_title }}</span>
-        </a>
-        {% endfor %}
-      </div>
+      {% include book-grid.html series="epic" ctx="home" %}
+      <p class="series__more"><a href="{{ "/series/prince-martin-epic/" | relative_url }}">About the Prince Martin Epic series →</a></p>
     </div>
   </section>
 
@@ -58,40 +64,15 @@ layout: default
     <p class="series__kicker">Picture book prequel series</p>
     <h2 class="series__title">Little Prince Martin Picture Books</h2>
     <p class="series__description">Picture books for younger readers with playful rhymes, bold artwork, and brave hearts.</p>
-    <div class="books-index" style="--cover-width: 280px">
-      {% assign picture_books = site.data.books | where: "series", "picture" | sort: "book_number" %}
-      {% for book in picture_books %}
-      <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
-        {% assign cover_thumb = book.cover_thumb | default: book.cover %}
-        {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
-        <picture>
-          <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
-          <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
-        </picture>
-        <span>{{ book.book_title }}</span>
-      </a>
-      {% endfor %}
-    </div>
+    {% include book-grid.html series="picture" ctx="home" width="280px" %}
+    <p class="series__more"><a href="{{ "/series/little-prince-martin/" | relative_url }}">About the Little Prince Martin picture books →</a></p>
   </section>
 
   <section class="series" style="--color-accent: var(--color-lime-dark); --color-gradient-1: var(--color-lime-light); --color-gradient-2: var(--color-lime-lightest);">
     <p class="series__kicker">Coloring book</p>
     <h2 class="series__title">The Prince Martin Epic Coloring Book</h2>
     <p class="series__description">170 pages of action-packed scenes from the series for boys to color—some easy, some harder.</p>
-    <div class="books-index" style="--cover-width: 280px">
-      {% assign coloring_books = site.data.books | where: "series", "coloring" | sort: "book_number" %}
-      {% for book in coloring_books %}
-      <a class="books-index__book" href="{{ "/products/" | append: book.slug | append: "/" | relative_url }}">
-        {% assign cover_thumb = book.cover_thumb | default: book.cover %}
-        {% assign cover_thumb_webp = cover_thumb | replace: ".jpg", ".webp" | replace: ".png", ".webp" %}
-        <picture>
-          <source srcset="{{ cover_thumb_webp | relative_url }}?v={{ asset_v }}" type="image/webp">
-          <img src="{{ cover_thumb | relative_url }}?v={{ asset_v }}" alt="{{ book.cover_alt }}" width="{{ book.cover_thumb_width | default: book.cover_width }}" height="{{ book.cover_thumb_height | default: book.cover_height }}" loading="lazy" decoding="async" style="view-transition-name: {{ book.view_transition_name }}">
-        </picture>
-        <span>{{ book.book_title }}</span>
-      </a>
-      {% endfor %}
-    </div>
+    {% include book-grid.html series="coloring" ctx="home" width="280px" %}
   </section>
 
   <section class="testimonials">
@@ -142,21 +123,8 @@ layout: default
         <h2 class="txt-x-large">The Story Behind the Prince Martin Epic Series</h2>
         <p>Brandon Hale was deployed overseas with the military in 2015. As the days and weeks passed, he began to feel like he was losing his bond with his young son, Thomas. Until the deployment, Thomas had been Brandon’s trusty sidekick, but the boy had lost interest in talking to his overseas dad on the phone.</p>
         <p>Then one day, Brandon had an idea. This time, when he called home, he asked if Thomas wanted to hear a story. A story about a Prince Martin, who was Brave, Loyal, and True. And Thomas was enchanted.</p>
-        <p>From then on, when Brandon could call home, Thomas would beg him to tell a Prince Martin story. Throughout the deployment, Brandon told Thomas many Prince Martin tales, and the boy even named some of the main characters like Sir Ray and John the timberwolf.</p>
-        <p>Upon returning home from deployment, Brandon’s wife encouraged him to turn his Prince Martin tales into children’s books. Brandon started to write. At first, he tried writing in prose. But prose seemed so dull. Then he remembered how much fun it is to read aloud stories that rhyme. He finally decided to write the books in a poetic style called anapestic tetrameter, hoping that parents and children would enjoy reading the stories aloud.</p>
-        <p>Brandon’s books in the Prince Martin Epic series can be read in order or as stand-alones:</p>
-        <ol>
-          <li><em>Prince Martin Wins His Sword</em></li>
-          <li><em>Prince Martin and the Thieves</em></li>
-          <li><em>Prince Martin and the Dragons</em></li>
-          <li><em>Prince Martin and the Cave Bear</em></li>
-          <li><em>Prince Martin and the Last Centaur</em></li>
-          <li><em>Prince Martin and the Pirates</em></li>
-          <li><em>Prince Martin and the Quest for the Bloodstone</em></li>
-        </ol>
-        <p>Most recently, he wrote Honesty Pays: A Little Prince Martin Picture Book for younger kids.</p>
+        <p><a class="txt-link" href="{{ "/brandon-hale/#story" | relative_url }}">Read the whole story →</a></p>
       </section>
-
       <section class="bio">
         <picture>
           <source srcset="{{ "/assets/images/author-brandon-hale.webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
@@ -165,14 +133,9 @@ layout: default
         <div>
           <h2 class="txt-align-center">About the Author</h2>
           <p>When Brandon Hale was a young boy, he lived in South America. It was a great place to be a kid, and his mom let him play outside as much as he wanted. He had a dog named Okie, a slingshot, and an awesome treehouse his dad built. The tree was full of pink mangoes and home to chattering parrots, slow-moving sloths, and fat iguanas. Sometimes, he would encounter a lanky boa constrictor coiled on a branch.</p>
-          <p>When he was older, his family moved home to Oklahoma, and he began second grade. His favorite classes were Reading and History. His parents took him and his little sister to the lake a lot, and sometimes his uncles would take him hunting with their falcons. He loved Dr. Seuss, Treasure Island, The Swiss Family Robinson, Old Yeller, and The Hobbit.</p>
-          <p>Brandon went to school for 19 years, including college at Baylor University and law school at the University of Oklahoma College of Law. In 2001, a lovely lady agreed to marry Brandon. Now they have five great kids and live on the Oklahoma plains. He has 20 years of combined active and reserve Navy service and holds the rank of Captain. For his day job, he works in law enforcement. When he is not writing, Brandon enjoys spending time with his wife and kids, reading, hiking, biking, lifting weights, and visiting his parents’ 160-acre Lazy H ranch in northeastern Oklahoma to hunt, fish, shoot, and ride four-wheelers.</p>
-          <p>Brandon’s favorite authors are Patrick O’Brian, Walker Percy, C.S. Lewis, and J.R.R. Tolkien. His favorite books include The Lord of the Rings, A Canticle for Leibowitz, Lonesome Dove, The Road, The Stand, The Reverse of the Medal, A Christmas Carol, Love in the Ruins, Endurance: Shackleton’s Incredible Voyage.</p>
-          <p>His favorite movies are The Passion, The Shawshank Redemption, Master and Commander, It’s a Wonderful Life, A Few Good Men, High Noon, A Man for All Seasons, The Searchers, True Grit, and Braveheart.</p>
-          <p>His favorite children’s books are The Clown of God, Horton Hatches an Egg, Horton Hears a Who, Saint George and the Dragon, and The Black Falcon.</p>
+          <p class="txt-align-center"><a class="txt-link" href="{{ "/brandon-hale/" | relative_url }}">More about Brandon Hale →</a></p>
         </div>
       </section>
-
       <section class="bio">
         <picture>
           <source srcset="{{ "/assets/images/illustrator-jason-zimdars.webp" | relative_url }}?v={{ asset_v }}" type="image/webp">
@@ -181,11 +144,7 @@ layout: default
         <div>
           <h2 class="txt-align-center">About the Illustrator</h2>
           <p>Jason Zimdars is an artist and designer best known as the illustrator of <a href="https://amzn.to/4qk0nEN">It Doesn’t Have to Be Crazy at Work</a> and the Prince Martin Epic series.</p>
-          <p>Jason has always loved to draw and grew up immersed in stories of heroes and magic like The Lord of the Rings, Dungeons & Dragons, Elric of Melniboné, Star Wars, The Dark Crystal, and E.T. He always came home from the movies or the library to draw all the amazing characters and places he saw in his imagination.</p>
-          <p>He later studied graphic design and recieved a Bachelor of Fine Arts in Art from the Univerity of Oklahoma. Today he works as a product designer at 37signals, where he’s worked on many products including Basecamp, HEY Email, ONCE Campfire, Writebook and Fizzy.</p>
-          <p>When his friend Brandon told him about Prince Martin, he knew he had to draw him and all his friends, too. He cannot wait to share more of Prince Martin’s adventures with you.</p>
-          <p>Jason loves to read beautiful children’s books to his kids. Some of his favorites are What Do you do with a Problem?, Where the Wild Things Are, Where the Sidewalk Ends, and Christopher The Holy Giant (or really anything by Tomi dePaola).</p>
-          <p>Mr. Zimdars lives in Oklahoma with his family and an old dog who isn’t nearly as brave as Sir Ray.</p>
+          <p class="txt-align-center"><a class="txt-link" href="{{ "/jason-zimdars/" | relative_url }}">More about Jason Zimdars →</a></p>
         </div>
       </section>
     </div>

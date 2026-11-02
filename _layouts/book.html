@@ -14,10 +14,13 @@ layout: default
   <div class="container book__detail">
     <div>
       {% assign cover_base = "/assets/images/books/covers/" | append: book_meta.slug %}
+      <div class="book__cover-wrap">
       <picture class="book__cover-picture">
         <source type="image/webp" srcset="{{ cover_base | append: "-600.webp" | relative_url }}?v={{ asset_v }} 600w, {{ cover_base | append: "-900.webp" | relative_url }}?v={{ asset_v }} 900w{% if book_meta.cover_width >= 1350 %}, {{ cover_base | append: "-1350.webp" | relative_url }}?v={{ asset_v }} 1350w{% endif %}" sizes="(min-width: 48em) 40vw, 92vw">
         <img class="book__cover" src="{{ cover_base | append: "-900.jpg" | relative_url }}?v={{ asset_v }}" srcset="{{ cover_base | append: "-900.jpg" | relative_url }}?v={{ asset_v }} 900w, {{ page.cover_image | relative_url }}?v={{ asset_v }} {{ book_meta.cover_width }}w" sizes="(min-width: 48em) 40vw, 92vw" alt="{{ page.cover_alt }}" width="{{ book_meta.cover_width | default: page.cover_width }}" height="{{ book_meta.cover_height | default: page.cover_height }}" decoding="async" fetchpriority="high" style="view-transition-name: {{ page.view_transition_name }};">
       </picture>
+      {% if book_meta.series == "epic" or book_meta.series == "picture" %}{% capture badge_id %}cover-{{ book_meta.book_number }}{% endcapture %}{% include book-badge.html n=book_meta.book_number id=badge_id series=book_meta.series %}{% endif %}
+      </div>
       {% if page.gallery or page.cover_image %}
       <div class="book__gallery">
         {% if page.gallery %}
@@ -53,10 +56,14 @@ layout: default
       {% endif %}
     </div>
     <div>
+      {% assign series_info = site.data.series[book_meta.series] %}
+      <header class="book__head">
       {% if page.kicker %}
-      <div class="series__kicker" style="--color-accent: var(--color-link);">{{ page.kicker }}</div>
+      <div class="series__kicker" style="--color-accent: var(--color-link);">{{ page.kicker }}{% if series_info %} · <a href="{{ series_info.url | relative_url }}">{{ series_info.name }}</a>{% endif %}</div>
       {% endif %}
       <h1 class="book__title">{{ page.book_title | default: page.title }}</h1>
+      <p class="book__byline">By <a href="{{ "/brandon-hale/" | relative_url }}">Brandon Hale</a> · Illustrated by <a href="{{ "/jason-zimdars/" | relative_url }}">Jason Zimdars</a></p>
+      </header>
       <div class="book__description">
         {{ content }}
         {% if page.amazon_formats %}
@@ -67,7 +74,7 @@ layout: default
             <h2 id="amazon-formats-title" class="buy-menu__title">Choose a format</h2>
             <ul class="buy-menu__list" role="list">
               {% for format in page.amazon_formats %}
-              <li><a class="btn buy-menu__link" href="{{ format.url }}" target="_blank" rel="noopener">{{ format.label }}<span class="visually-hidden"> on Amazon (opens in a new tab)</span></a></li>
+              <li><a class="btn buy-menu__link" href="{{ format.url }}" target="_blank" rel="noopener" data-goatcounter-click="buy-amazon-{{ format.label | slugify }}-{{ book_meta.slug }}" data-goatcounter-title="Amazon {{ format.label }}: {{ page.book_title | escape }}">{{ format.label }}<span class="visually-hidden"> on Amazon (opens in a new tab)</span></a></li>
               {% endfor %}
             </ul>
             <button type="button" class="btn btn--plain buy-menu__close" popovertarget="amazon-formats" popovertargetaction="hide">Cancel</button>
@@ -79,25 +86,25 @@ layout: default
         <p class="book__retailers">Also available at
           {%- for r in page.other_retailers -%}
           {%- if forloop.first %} {% elsif forloop.last %}{% if forloop.length > 2 %},{% endif %} and {% else %}, {% endif -%}
-          <a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>
+          <a href="{% if r.label == "Bookshop.org" %}{% include bookshop-url.html url=r.url %}{% else %}{{ r.url }}{% endif %}" target="_blank" rel="noopener" data-goatcounter-click="buy-{{ r.label | slugify }}-{{ book_meta.slug }}" data-goatcounter-title="{{ r.label | escape }}: {{ page.book_title | escape }}">{{ r.label }}</a>
           {%- endfor -%}.
         </p>
         {% endif %}
+        {% include book-details.html book_meta=book_meta %}
+        {% assign endorsements = site.data.endorsements[book_meta.slug] %}
+        {% if endorsements %}
+        <section class="book__praise" aria-labelledby="praise-title">
+          <h2 id="praise-title" class="txt-large">Praise for {{ page.book_title }}</h2>
+          {% for e in endorsements %}
+          <figure>
+            <blockquote>{{ e.quote }}</blockquote>
+            <figcaption>— {{ e.cite }}</figcaption>
+          </figure>
+          {% endfor %}
+        </section>
+        {% endif %}
         {% if page.show_byline != false %}
-        <div class="series__byline fill-blue pad-block pad-inline-double border-radius margin-block-double">
-          <h3 class="margin-none txt-large">Is your son a reluctant reader?</h3>
-          <p>The Prince Martin Epic series is a perfect fit because each book features:</p>
-          <ul>
-            <li>High-stakes action-adventure and danger</li>
-            <li>Brilliant color illustrations that burst off the page</li>
-            <li>Text that appears to be prose—but <i>subtly rhymes,</i> gently nudging the boy along as he is encouraged to find the next rhyme</li>
-          </ul>
-          <p>This is the perfect formula for engaging <i>boy</i> readers.</p>
-          <p>The Prince Martin Epic series is adventure books that fill a need: because they RHYME your son will read!</p>
-          <p>This book series will hook your son on reading because the subtly rhyming text fascinates reluctant readers, who can’t wait to discover the next epic rhyme. Your son will also love the books because of the explosive art and high-stakes action-adventure. These are not “safe” books!</p>
-          <p>Parents will appreciate these classic tales because they build character, model virtue, and inspire grit and resilience in boys. The series grows with your son: Each successive book gets longer and the plot more action-packed! And each book can be read as a stand-alone.</p>
-          <p>Introduce your son to Prince Martin today because boys need virtuous heroes!</p>
-        </div>
+        {% include epic-pitch.html %}
         {% endif %}
       </div>
     </div>

@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<main id="main" class="page">
+  <nav class="page__crumbs container txt-align-center" aria-label="Breadcrumb"><a href="{{ "/" | relative_url }}" class="btn txt-medium margin-block">← All books</a></nav>
+  <div class="container page__body">
+    {{ content }}
+  </div>
+</main>
+{% if page.jsonld %}{% include {{ page.jsonld }} %}{% endif %}
