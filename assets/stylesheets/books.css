@@ -106,7 +106,7 @@
   }
 
   /* Author, illustrator and series pages */
-  .page__body { max-inline-size: 60rem; margin-inline: auto; padding: 0 var(--space) var(--space-double); text-align: start; }
+  .page__body { max-inline-size: 60rem; margin-inline: auto; padding: clamp(1.5rem, 4vw, 3rem) var(--space) var(--space-double); text-align: start; }
   .person__header, .series-page__header { margin-block-end: var(--space-double); text-align: center; }
   .person__header img { block-size: 12rem; border-radius: 50%; box-shadow: var(--shadow); inline-size: 12rem; margin: 0 auto var(--space); object-fit: cover; }
   .person__name { font-size: var(--text-xx-large); margin: 0; }

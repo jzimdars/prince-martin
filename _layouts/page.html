@@ -2,7 +2,8 @@
 layout: default
 ---
 <main id="main" class="page">
-  <nav class="page__crumbs container txt-align-center" aria-label="Breadcrumb"><a href="{{ "/" | relative_url }}" class="btn txt-medium margin-block">← All books</a></nav>
+  {% capture back_link %}<a href="{{ "/" | relative_url }}" class="btn txt-medium margin-block">← All books</a>{% endcapture %}
+  {% include back-band.html content=back_link label="Breadcrumb" %}
   <div class="container page__body">
     {{ content }}
   </div>
