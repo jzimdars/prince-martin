@@ -20,7 +20,7 @@ permalink: /books.json
       "age_range": {{ pg.age_range | jsonify }},
       "pages": {{ pg.pages | jsonify }},
       "editions": {{ pg.isbns | jsonify }},
-      "amazon": {{ pg.amazon_formats | jsonify }},
+      "amazon": [{% for f in pg.amazon_formats %}{% capture az %}{% include amazon-url.html url=f.url %}{% endcapture %}{ "label": {{ f.label | jsonify }}, "url": {{ az | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
       "other_retailers": {{ pg.other_retailers | jsonify }}
     }{% unless forloop.last %},{% endunless %}{% endfor %}
   ]

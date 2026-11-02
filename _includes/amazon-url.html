@@ -1,0 +1,15 @@
+{%- comment -%}
+  Adds the Amazon Associates tag (site.amazon_associate_tag) to an Amazon URL.
+  Replaces any existing tag= param instead of duplicating it; other params are kept.
+  Usage: {% include amazon-url.html url=format.url %}
+{%- endcomment -%}
+{%- assign az_url = include.url | strip -%}
+{%- assign az_tag = site.amazon_associate_tag | strip -%}
+{%- if az_tag == "" -%}{{ az_url }}{%- else -%}
+{%- assign az_parts = az_url | split: "?" -%}
+{%- assign az_base = az_parts[0] -%}
+{%- assign az_query = az_parts[1] | default: "" -%}
+{%- assign az_params = az_query | split: "&" -%}
+{%- capture az_kept -%}{%- for p in az_params -%}{%- assign p3 = p | slice: 0, 4 -%}{%- if p != "" and p3 != "tag=" -%}{{ p }}&{%- endif -%}{%- endfor -%}{%- endcapture -%}
+{{ az_base }}?{{ az_kept }}tag={{ az_tag | url_encode }}
+{%- endif -%}
