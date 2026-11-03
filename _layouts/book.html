@@ -59,7 +59,7 @@ layout: default
               </div>
               {% else %}
               <button class="btn btn--plain" popovertarget="{{ item.id }}" popovertargetaction="hide" aria-label="Close image">
-                <img src="{{ item.image | relative_url }}?v={{ asset_v }}" alt="" loading="lazy" decoding="async">
+                <img src="{{ item.image | relative_url }}?v={{ asset_v }}" alt="" {% if item.thumb_width %}width="{{ item.thumb_width }}" height="{{ item.thumb_height }}" {% endif %}loading="eager" decoding="async">
               </button>
               {% endif %}
             </div>
@@ -70,7 +70,7 @@ layout: default
             <button class="btn btn--plain" popovertarget="gallery-1" aria-label="View larger cover image"><img src="{{ page.cover_image | relative_url }}?v={{ asset_v }}" alt="" width="{{ book_meta.cover_width | default: page.cover_width }}" height="{{ book_meta.cover_height | default: page.cover_height }}" loading="lazy" decoding="async"></button>
             <div id="gallery-1" popover>
               <button class="btn btn--plain" popovertarget="gallery-1" popovertargetaction="hide" aria-label="Close image">
-                <img src="{{ page.cover_image | relative_url }}?v={{ asset_v }}" alt="" width="{{ book_meta.cover_width | default: page.cover_width }}" height="{{ book_meta.cover_height | default: page.cover_height }}" loading="lazy" decoding="async">
+                <img src="{{ page.cover_image | relative_url }}?v={{ asset_v }}" alt="" width="{{ book_meta.cover_width | default: page.cover_width }}" height="{{ book_meta.cover_height | default: page.cover_height }}" loading="eager" decoding="async">
               </button>
             </div>
           </div>

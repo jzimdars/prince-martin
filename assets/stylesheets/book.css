@@ -121,10 +121,28 @@
       line-height: 0;
       padding: 0;
 
+      /* Fade only: the shared scale(0.2) entry could leave the image stuck small */
+      background: transparent;
+      box-shadow: none;
+      max-block-size: 90dvh;
+      max-inline-size: 90dvw;
+      overflow: visible;
+      transform: none;
+      transition-property: display, opacity, overlay;
+
+      &:popover-open { transform: none; }
+
+      @starting-style {
+        &:popover-open { transform: none; }
+      }
+
+      > .btn { display: block; }
+
       img {
-        inline-size: auto;
-        max-block-size: calc(100dvh - 2 * var(--space-double));
-        max-inline-size: calc(100dvw - 2 * var(--space-double));
+        block-size: 90dvh;
+        inline-size: 90dvw;
+        max-inline-size: none;
+        object-fit: contain;
       }
     }
   }
