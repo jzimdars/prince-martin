@@ -76,6 +76,27 @@ layout: default
           </div>
         {% endif %}
       </div>
+      <script>
+        // Arrow keys step through an open gallery popover's siblings (wraps at the ends)
+        document.addEventListener("keydown", function (event) {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+          if (event.target.closest && event.target.closest("video")) return;
+          var current = document.querySelector(".book__gallery [popover]:popover-open");
+          if (!current) return;
+          var items = current.closest(".book__gallery").querySelectorAll("[popover]");
+          if (items.length < 2) return;
+          var index = Array.prototype.indexOf.call(items, current);
+          var next = items[(index + (event.key === "ArrowRight" ? 1 : -1) + items.length) % items.length];
+          event.preventDefault();
+          var video = current.querySelector("video");
+          if (video) video.pause();
+          current.hidePopover();
+          next.showPopover();
+          var focusable = next.querySelector("button, video");
+          if (focusable) focusable.focus({ preventScroll: true });
+        });
+      </script>
       {% endif %}
     </div>
     <div>
