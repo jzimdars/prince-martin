@@ -1,0 +1,108 @@
+# FAQ for parents, rendered by /faq/ (HTML) and _includes/faq-jsonld.html (FAQPage structured data).
+# Answers are HTML; keep facts in sync with the book pages and _data/series.yml.
+- section: Choosing a book
+  id: choosing
+  questions:
+    - id: where-to-start
+      q: Which Prince Martin book should we start with?
+      a: >-
+        <p>It depends on your child’s age. For ages 3–7, start with the
+        <a href="/series/little-prince-martin/">Little Prince Martin picture books</a>, beginning with
+        <a href="/products/honesty-pays-a-little-prince-martin-picture-book/">Honesty Pays</a>. For ages 6 and up, start with
+        <a href="/products/prince-martin-wins-his-sword/">Prince Martin Wins His Sword</a>, Book 1 of
+        <a href="/series/prince-martin-epic/">The Prince Martin Epic</a>. Our <a href="/start-here/">Where to start guide</a>
+        lays out every book by age on one page.</p>
+    - id: ages
+      q: What ages are the books for?
+      a: >-
+        <p>The Little Prince Martin picture books are for ages 3–7. The Prince Martin Epic grows with your child:
+        Book 1 is for ages 6+, Books 2 and 3 for 7+, Books 4 and 5 for 8+, Book 6 for 9+, and Book 7 for 10+.
+        The Prince Martin Epic Coloring Book is for ages 5–12.</p>
+    - id: order
+      q: Do the books need to be read in order?
+      a: >-
+        <p>No. The books in the Prince Martin Epic can be read in order or as stand-alones. Reading them in order
+        has a bonus, though: each successive book gets longer and the plot more action-packed, so the series grows
+        with your son. See the <a href="/series/prince-martin-epic/#reading-order">reading order</a>.</p>
+    - id: two-series
+      q: How are the two series connected?
+      a: >-
+        <p><a href="/series/little-prince-martin/">Little Prince Martin</a> is a picture book prequel series to
+        <a href="/series/prince-martin-epic/">The Prince Martin Epic</a>, written for younger readers. Both are by
+        Brandon Hale and illustrated by Jason Zimdars. When your child is ready for more, the Epic’s Book 1 is the
+        natural next step.</p>
+    - id: reluctant-readers
+      q: Are the books good for reluctant readers?
+      a: >-
+        <p>That’s who they were made for. The Epic books pair high-stakes adventure and bold color illustrations
+        with text that looks like prose but subtly rhymes, so kids keep reading to find the next rhyme. The rhythm
+        also makes the books fun to read aloud together.</p>
+    - id: why-rhyme
+      q: Why do the books rhyme?
+      a: >-
+        <p>When Brandon started writing, prose seemed dull, and he remembered how much fun it is to read rhyming
+        stories aloud. So he wrote the books in a poetic meter called anapestic tetrameter, hoping parents and
+        children would enjoy reading them aloud. Read more in
+        <a href="/brandon-hale/#story">the story behind the series</a>.</p>
+- section: Formats and audiobooks
+  id: formats
+  questions:
+    - id: formats
+      q: What formats are the books available in?
+      a: >-
+        <p>The Prince Martin Epic books come in hardcover, full-color paperback, grayscale paperback, Kindle, and
+        audiobook. The Little Prince Martin picture books come in hardcover, paperback, and Kindle. The coloring
+        book is an 8.5″ × 11″ paperback. Each book page lists the formats and stores where it’s available.</p>
+    - id: grayscale
+      q: What’s the difference between the full-color and grayscale paperbacks?
+      a: >-
+        <p>The story is the same. The full-color paperback prints the illustrations in color, while the grayscale
+        paperback prints them in shades of gray. Choose your format from the “Buy at Amazon” menu on any Epic book page.</p>
+    - id: audiobooks
+      q: Are there audiobooks?
+      a: >-
+        <p>Yes. All seven Prince Martin Epic books are available as audiobooks on Amazon and
+        <a href="https://www.audible.com/author/Brandon-Hale/B07467B6Z3">Audible</a>, and several are narrated by
+        Brandon himself. On any Epic book page, choose “Audiobook” from the “Buy at Amazon” menu.</p>
+    - id: where-to-buy
+      q: Where can I buy the books?
+      a: >-
+        <p>Every book page has a “Buy at Amazon” button with each format, plus links to other stores such as
+        Barnes &amp; Noble, Walmart, and Bookshop.org. Start from the <a href="/">full list of books</a>.</p>
+    - id: coloring-book
+      q: Is there a coloring book?
+      a: >-
+        <p>Yes. <a href="/products/the-prince-martin-epic-coloring-book/">The Prince Martin Epic Coloring Book</a>
+        has 170 pages of action-packed scenes from the series to color—some easy, some harder—for ages 5–12.</p>
+- section: About the books
+  id: about
+  questions:
+    - id: who-makes-them
+      q: Who writes and illustrates the books?
+      a: >-
+        <p>The books are written by <a href="/brandon-hale/">Brandon Hale</a>, an Oklahoma dad of five with 20 years
+        of Navy service. They’re illustrated by <a href="/jason-zimdars/">Jason Zimdars</a>, an
+        artist and designer who is also known for illustrating <em>It Doesn’t Have to Be Crazy at Work</em>.</p>
+    - id: how-it-started
+      q: How did Prince Martin begin?
+      a: >-
+        <p>In 2015, Brandon was deployed overseas with the military and felt he was losing his bond with his young
+        son, Thomas. One day he asked Thomas if he wanted to hear a story about a Prince Martin, who was Brave,
+        Loyal, and True, and Thomas was enchanted. Thomas even named some of the main characters, like Sir Ray and
+        John the timberwolf. Back home, Brandon’s wife encouraged him to turn the tales into books.
+        <a href="/brandon-hale/#story">Read the whole story</a>.</p>
+    - id: how-illustrated
+      q: How are the illustrations made?
+      a: >-
+        <p>Jason draws every illustration digitally in Procreate on an iPad Pro. He sketches each scene in blue,
+        refines it in red, traces a clean drawing in black pencil, and then inks and colors it.
+        <a href="/jason-zimdars/illustrating-prince-martin/">See his step-by-step process</a>, with sketches and
+        finished art.</p>
+- section: Getting in touch
+  id: contact
+  questions:
+    - id: contact
+      q: How can we get in touch or send a letter or drawing?
+      a: >-
+        <p>Email us at <a href="mailto:info@princemartin.com">info@princemartin.com</a>, or mail letters and drawings
+        to the address on our <a href="/contact/">contact page</a>. We read everything, though we can’t always reply.</p>

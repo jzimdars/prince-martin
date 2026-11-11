@@ -1,0 +1,28 @@
+---
+layout: page
+title: "Prince Martin Books FAQ: Ages, Reading Order, Formats & More"
+description: "Answers for parents: which Prince Martin book to start with, ages, reading order, audiobooks, formats, the coloring book, and how the books are made."
+jsonld: faq-jsonld.html
+---
+<article class="faq">
+  <header class="series-page__header">
+    <p class="series__kicker">For parents</p>
+    <h1 class="series__title">Frequently asked questions</h1>
+    <p class="series__description">Where to start, what ages, which format, and how the books are made.</p>
+    <nav class="faq__toc" aria-label="FAQ sections">
+      {% for section in site.data.faq %}<a href="#{{ section.id }}">{{ section.section }}</a>{% endfor %}
+    </nav>
+  </header>
+  {% for section in site.data.faq %}
+  <section class="prose faq__section" aria-labelledby="{{ section.id }}">
+    <h2 id="{{ section.id }}">{{ section.section }}</h2>
+    {% for item in section.questions %}
+    <div class="faq__item">
+      <h3 id="{{ item.id }}"><a href="#{{ item.id }}">{{ item.q }}</a></h3>
+      {{ item.a }}
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+  <p class="faq__more">Still have a question? <a href="{{ "/contact/" | relative_url }}">Get in touch</a>.</p>
+</article>
