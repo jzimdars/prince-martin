@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-header="{{ site.header_variant | default: "c" }}">
 {% include head.html %}
 <body>
+  {% include site-header.html %}
   {{ content }}
   {% include footer.html %}
 </body>

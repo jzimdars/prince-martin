@@ -38,6 +38,9 @@
   <link rel="stylesheet" href="{{ "/assets/stylesheets/buttons.css" | relative_url }}?v={{ asset_v }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/popover.css" | relative_url }}?v={{ asset_v }}">
   <link rel="stylesheet" href="{{ "/assets/stylesheets/book.css" | relative_url }}?v={{ asset_v }}">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/header.css" | relative_url }}?v={{ asset_v }}">
+  {%- comment -%} Design review only: ?header=a|b|c previews a header option. Remove once an option is chosen. {%- endcomment %}
+  <script>(function(){var m=/[?&]header=([abc])\b/.exec(location.search);if(m)document.documentElement.setAttribute("data-header",m[1]);})();</script>
   {%- if page.article %}
   <meta property="article:published_time" content="2017-08-09">
   <meta property="article:author" content="{{ "/jason-zimdars/" | absolute_url }}">
