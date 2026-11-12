@@ -76,6 +76,13 @@
       a: >-
         <p>Yes. <a href="/products/the-prince-martin-epic-coloring-book/">The Prince Martin Epic Coloring Book</a>
         has 170 pages of action-packed scenes from the series to color—some easy, some harder—for ages 5–12.</p>
+    - id: free-coloring-pages
+      q: Are there free coloring pages?
+      a: >-
+        <p>Yes. You can <a href="/coloring-pages/">download 12 free coloring pages</a> from
+        <a href="/products/prince-martin-and-the-thieves/">Prince Martin and the Thieves</a>,
+        no email required. For many more scenes from the series, see
+        <a href="/products/the-prince-martin-epic-coloring-book/">The Prince Martin Epic Coloring Book</a>.</p>
 - section: About the books
   id: about
   questions:

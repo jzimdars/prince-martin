@@ -171,3 +171,29 @@
     address { font-size: 1.15em; font-style: normal; font-weight: bold; line-height: 1.45; margin-block-end: var(--space-half); }
   }
 }
+
+@layer modules {
+  /* Free coloring pages */
+  .coloring-pages { text-align: center; }
+  .coloring-pages .series__description a,
+  .coloring-pages .prose a { color: var(--color-link); text-decoration: underline; text-underline-offset: 0.15em; }
+  .coloring-pages__previews {
+    display: grid;
+    gap: var(--space);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    margin: var(--space) auto var(--space-double);
+    max-inline-size: 50rem;
+    figure { margin: 0; }
+    img {
+      background: #fff;
+      block-size: auto;
+      border: var(--border);
+      border-radius: 0.35rem;
+      box-shadow: var(--shadow);
+      inline-size: 100%;
+    }
+  }
+  .coloring-pages__download { margin-block: 0 var(--space-double); }
+  .coloring-pages__btn { --btn-padding: 0.8em 1.6em; font-size: 1.15em; }
+  .coloring-pages .prose { margin-block-start: 0; text-align: start; }
+}
