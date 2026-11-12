@@ -17,6 +17,7 @@ Contact: info@princemartin.com
 - [Where to start]({{ "/start-here/" | absolute_url }}): every book by age, from the picture books (3–7) to Epic Book 7 (10+).
 - [FAQ]({{ "/faq/" | absolute_url }}): ages, reading order, formats, audiobooks, and how the books are made.
 - [Contact]({{ "/contact/" | absolute_url }}): email and a mailing address for letters and drawings.
+- [Free coloring pages]({{ "/coloring-pages/" | absolute_url }}): 12 printable pages from Prince Martin and the Thieves (Book 2). No email required.
 - [Little Prince Martin Picture Books]({{ "/series/little-prince-martin/" | absolute_url }}): picture book prequel series, ages 3–7.
 {% assign series_list = "epic,picture,coloring" | split: "," %}{% for s in series_list %}{% capture sname %}{% include series-name.html series=s %}{% endcapture %}
 ## {{ sname }}

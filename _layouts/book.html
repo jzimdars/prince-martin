@@ -126,6 +126,9 @@ layout: default
             <button type="button" class="btn btn--plain buy-menu__close" popovertarget="amazon-formats" popovertargetaction="hide">Cancel</button>
           </div>
           {% endif %}
+          {% if page.coloring_pages %}
+          <a class="btn" href="{{ page.coloring_pages.url | default: "/coloring-pages/" | relative_url }}">{{ page.coloring_pages.label | default: "Free coloring pages" }}</a>
+          {% endif %}
         </div>
         {% endif %}
         {% if page.other_retailers %}
