@@ -56,8 +56,10 @@
     - id: grayscale
       q: What’s the difference between the full-color and grayscale paperbacks?
       a: >-
-        <p>The story is the same. The full-color paperback prints the illustrations in color, while the grayscale
-        paperback prints them in shades of gray. Choose your format from the “Buy at Amazon” menu on any Epic book page.</p>
+        <p>The story is the same in both. The full-color paperback is the premium edition, with the
+        illustrations printed in full color on premium paper. The grayscale paperback is an affordable
+        edition, with the illustrations printed in shades of gray. Choose your format from the
+        “Buy at Amazon” menu on any Epic book page.</p>
     - id: audiobooks
       q: Are there audiobooks?
       a: >-
