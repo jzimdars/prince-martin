@@ -1,4 +1,4 @@
-/* Persistent site header: three options (a, b, c) selected by html[data-header]. */
+/* Persistent compact site header with Start here + Menu. */
 @layer modules {
   :root { --header-height: 3.25rem; }
 
@@ -6,6 +6,7 @@
     -webkit-backdrop-filter: saturate(1.4) blur(10px);
     backdrop-filter: saturate(1.4) blur(10px);
     background: oklch(var(--lch-brand-hero-dark) / 0.94);
+    border-block-end: 3px solid var(--color-brand-gold);
     color: var(--color-white);
     font-family: var(--font-sans);
     font-size: var(--text-small);
@@ -19,7 +20,7 @@
   .site-header__inner {
     align-items: center;
     display: flex;
-    gap: var(--space);
+    gap: 0.6rem;
     margin-inline: auto;
     max-inline-size: var(--main-inline-size);
     min-block-size: var(--header-height);
@@ -34,7 +35,7 @@
   }
 
   .site-header__nav {
-    display: flex;
+    display: none;
     gap: 0.25rem 1.4rem;
     margin-inline-start: auto;
     a { font-weight: 600; opacity: 0.88; padding-block: 0.4rem; white-space: nowrap; }
@@ -47,8 +48,11 @@
     --btn-color: var(--color-brand-hero-dark);
     --btn-padding: 0.4em 1em;
     flex: none;
+    margin-inline-start: auto;
     white-space: nowrap;
   }
+
+  .site-header__nav + .site-header__cta { margin-inline-start: 0; }
 
   .site-header__menu {
     position: static;
@@ -87,68 +91,15 @@
     a:first-child { color: var(--color-brand-gold); }
   }
 
+  @media (min-width: 64em) {
+    .site-header__nav { display: flex; }
+    .site-header__menu { display: none; }
+  }
+
   /* Keep the book page's sticky buy bar below the header */
   .book__actions { inset-block-start: var(--header-height); }
   :where(h1, h2, h3, [id]) { scroll-margin-block-start: calc(var(--header-height) + 0.5rem); }
 
-  /* ---------- Option A: minimal text bar ---------- */
-  html[data-header="a"] {
-    --header-height: 3rem;
-    .site-header__brand img { block-size: 1.8rem; }
-    .site-header__cta, .site-header__menu { display: none; }
-    .site-header__nav-start { color: var(--color-brand-gold) !important; opacity: 1 !important; }
-
-    @media (max-width: 47.99em) {
-      .site-header__inner { gap: 0.75rem; padding-inline-end: 0; }
-      .site-header__nav {
-        -webkit-mask-image: linear-gradient(90deg, transparent, #000 0.75rem, #000 calc(100% - 1.5rem), transparent);
-        mask-image: linear-gradient(90deg, transparent, #000 0.75rem, #000 calc(100% - 1.5rem), transparent);
-        gap: 1.1rem;
-        overflow-x: auto;
-        padding-inline: 0.75rem 1.5rem;
-        scrollbar-width: none;
-        &::-webkit-scrollbar { display: none; }
-      }
-    }
-  }
-
-  /* ---------- Option B: centered logo with nav row ---------- */
-  html[data-header="b"] {
-    --header-height: 5.6rem;
-    .site-header { border-block-start: 4px solid var(--color-brand-gold); }
-    .site-header__inner { flex-direction: column; gap: 0.15rem; padding-block: 0.45rem 0.2rem; }
-    .site-header__brand img { block-size: 2.4rem; }
-    .site-header__nav { justify-content: center; margin-inline: 0; flex-wrap: wrap; gap: 0 1.5rem; }
-    .site-header__nav-start { color: var(--color-brand-gold) !important; opacity: 1 !important; }
-    .site-header__cta, .site-header__menu { display: none; }
-    /* the home hero already shows the big logo; the gold rule moves up to the header */
-    .site-header + #main > .hero:first-child, .site-header + main > .hero:first-child { border-block-start: 0; }
-
-    @media (max-width: 47.99em) {
-      --header-height: 5.1rem;
-      .site-header__brand img { block-size: 2rem; }
-      .site-header__nav { gap: 0 0.9rem; a { font-size: 0.92em; padding-block: 0.3rem; } }
-      .site-header__nav a:nth-child(4) { display: none; } /* About lives in the footer on small screens */
-    }
-  }
-
-  /* ---------- Option C: compact bar, Start here + Menu (recommended) ---------- */
-  html[data-header="c"], html:not([data-header]) {
-    .site-header { border-block-end: 3px solid var(--color-brand-gold); }
-    .site-header__nav-start { display: none; }
-    .site-header__cta { margin-inline-start: auto; }
-    .site-header__nav + .site-header__cta { margin-inline-start: 0; }
-    .site-header__nav { display: none; }
-    .site-header__inner { gap: 0.6rem; }
-
-    @media (min-width: 64em) {
-      .site-header__nav { display: flex; }
-      .site-header__menu { display: none; }
-    }
-    @media (max-width: 63.99em) {
-      .site-header__cta { margin-inline-start: auto; }
-    }
-    /* drop the hero's gold rule right under the header so there's one gold line, not two */
-    .site-header + main > .hero:first-child { border-block-start: 0; }
-  }
+  /* drop the hero's gold rule right under the header so there's one gold line, not two */
+  .site-header + main > .hero:first-child { border-block-start: 0; }
 }

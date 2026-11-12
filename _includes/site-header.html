@@ -1,8 +1,6 @@
 {%- comment -%}
-  Persistent site header. Three design options share this markup and are styled in header.css:
-    a = minimal text bar, b = centered logo with nav row, c = compact bar with Start here + Menu (default).
-  The default comes from site.header_variant; ?header=a|b|c previews another option (see head.html).
-  No JavaScript needed to use it: the mobile menu is a native <details> disclosure.
+  Persistent compact site header with Start here and a Menu. Styled in header.css.
+  No JavaScript needed: the mobile menu is a native <details> disclosure.
 {%- endcomment -%}
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
@@ -15,7 +13,6 @@
       <a href="{{ "/series/little-prince-martin/" | relative_url }}">Picture Books</a>
       <a href="{{ "/brandon-hale/" | relative_url }}">About</a>
       <a href="{{ "/faq/" | relative_url }}">FAQ</a>
-      <a href="{{ "/start-here/" | relative_url }}" class="site-header__nav-start">Start here</a>
     </nav>
     <a class="btn site-header__cta" href="{{ "/start-here/" | relative_url }}">Start here</a>
     <details class="site-header__menu">
