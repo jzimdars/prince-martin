@@ -22,17 +22,18 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/stylesheets/reset.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/base.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/utilities.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/layout.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/home.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/books.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/testimonials.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/about.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/buttons.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/popover.css?v=20261102d">
-  <link rel="stylesheet" href="/assets/stylesheets/book.css?v=20261102d">
+  <link rel="stylesheet" href="/assets/stylesheets/reset.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/base.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/utilities.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/layout.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/home.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/books.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/testimonials.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/about.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/buttons.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/popover.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/book.css?v=20261111c">
+  <link rel="stylesheet" href="/assets/stylesheets/header.css?v=20261111c">
   
 <script data-goatcounter="https://princemartin.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -40,6 +41,36 @@
 </head>
 
 <body>
+  <header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="/">
+      <img src="/assets/images/prince-martin-logo.svg" alt="Prince Martin" width="1280" height="624">
+    </a>
+    <nav class="site-header__nav" aria-label="Main">
+      <a href="/#start">Books</a>
+      <a href="/series/prince-martin-epic/">The Epic</a>
+      <a href="/series/little-prince-martin/">Picture Books</a>
+      <a href="/brandon-hale/">About</a>
+      <a href="/faq/">FAQ</a>
+    </nav>
+    <a class="btn site-header__cta" href="/start-here/">Start here</a>
+    <details class="site-header__menu">
+      <summary class="btn"><span class="site-header__menu-icon" aria-hidden="true"></span>Menu</summary>
+      <nav class="site-header__panel" aria-label="Menu">
+        <a href="/start-here/">Where to start</a>
+        <a href="/#start">All books</a>
+        <a href="/series/prince-martin-epic/">The Prince Martin Epic</a>
+        <a href="/series/little-prince-martin/">Little Prince Martin Picture Books</a>
+        <a href="/products/the-prince-martin-epic-coloring-book/">Coloring Book</a>
+        <a href="/brandon-hale/">Author Brandon Hale</a>
+        <a href="/jason-zimdars/">Illustrator Jason Zimdars</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
   
 
 <main id="main">
@@ -56,7 +87,9 @@
               "/series/prince-martin-epic/": "The Prince Martin Epic",
               "/series/little-prince-martin/": "Little Prince Martin Picture Books",
               "/brandon-hale/": "Brandon Hale",
-              "/jason-zimdars/": "Jason Zimdars"
+              "/jason-zimdars/": "Jason Zimdars",
+              "/start-here/": "Where to start",
+              "/faq/": "FAQ"
             };
             var ref;
             try { ref = document.referrer ? new URL(document.referrer) : null; } catch (e) { ref = null; }
@@ -85,8 +118,8 @@
       
       <div class="book__cover-wrap">
       <picture class="book__cover-picture">
-        <source type="image/webp" srcset="/assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-600.webp?v=20261102d 600w, /assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.webp?v=20261102d 900w, /assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-1350.webp?v=20261102d 1350w" sizes="(min-width: 48em) 40vw, 92vw">
-        <img class="book__cover" src="/assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.jpg?v=20261102d" srcset="/assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.jpg?v=20261102d 900w, /assets/images/books/honesty-pays-a-little-prince-martin-picture-book.png?v=20261102d 1910w" sizes="(min-width: 48em) 40vw, 92vw" alt="Cover of Honesty Pays: A Little Prince Martin Picture Book" width="1910" height="1920" decoding="async" fetchpriority="high" style="view-transition-name: LPM-book-1;">
+        <source type="image/webp" srcset="/assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-600.webp?v=20261111c 600w, /assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.webp?v=20261111c 900w, /assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-1350.webp?v=20261111c 1350w" sizes="(min-width: 48em) 40vw, 92vw">
+        <img class="book__cover" src="/assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.jpg?v=20261111c" srcset="/assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.jpg?v=20261111c 900w, /assets/images/books/honesty-pays-a-little-prince-martin-picture-book.png?v=20261111c 1910w" sizes="(min-width: 48em) 40vw, 92vw" alt="Cover of Honesty Pays: A Little Prince Martin Picture Book" width="1910" height="1920" decoding="async" fetchpriority="high" style="view-transition-name: LPM-book-1;">
       </picture>
       <svg class="book-badge book-badge--picture" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><radialGradient id="bb-g-cover-1" cx="38%" cy="32%" r="75%"><stop offset="0" class="book-badge__hi"/><stop offset="0.55" class="book-badge__mid"/><stop offset="1" class="book-badge__lo"/></radialGradient><path id="bb-top-cover-1" d="M 19 50 A 31 31 0 0 1 81 50"/><path id="bb-bot-cover-1" d="M 14 50 A 36 36 0 0 0 86 50"/></defs><circle class="book-badge__ring" cx="50" cy="50" r="48"/><circle class="book-badge__disc" cx="50" cy="50" r="44.5" fill="url(#bb-g-cover-1)"/><circle class="book-badge__rim" cx="50" cy="50" r="43"/><text class="book-badge__label"><textPath href="#bb-top-cover-1" startOffset="50%" text-anchor="middle">Book One</textPath></text><text class="book-badge__num" x="50" y="49" text-anchor="middle" dominant-baseline="central">1</text><text class="book-badge__label book-badge__label--bottom"><textPath href="#bb-bot-cover-1" startOffset="50%" text-anchor="middle">Of Three</textPath></text></svg>
 
@@ -96,55 +129,55 @@
         
           
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="gallery-1" aria-label="View larger image 1 of 5"><img src="/assets/images/books/honesty/honesty-pays-case.jpg?v=20261102d" alt="" width="2800" height="2800" loading="lazy" decoding="async"></button>
+            <button class="btn btn--plain" popovertarget="gallery-1" aria-label="View larger image 1 of 5"><img src="/assets/images/books/honesty/honesty-pays-case.jpg?v=20261111c" alt="" width="2800" height="2800" loading="lazy" decoding="async"></button>
             <div id="gallery-1" popover>
               
               <button class="btn btn--plain" popovertarget="gallery-1" popovertargetaction="hide" aria-label="Close image">
-                <img src="/assets/images/books/honesty/honesty-pays-case.jpg?v=20261102d" alt="" width="2800" height="2800" loading="eager" decoding="async">
+                <img src="/assets/images/books/honesty/honesty-pays-case.jpg?v=20261111c" alt="" width="2800" height="2800" loading="eager" decoding="async">
               </button>
               
             </div>
           </div>
           
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="gallery-2" aria-label="View larger image 2 of 5"><img src="/assets/images/books/honesty/IMG_0835.jpg?v=20261102d" alt="" width="3836" height="3836" loading="lazy" decoding="async"></button>
+            <button class="btn btn--plain" popovertarget="gallery-2" aria-label="View larger image 2 of 5"><img src="/assets/images/books/honesty/IMG_0835.jpg?v=20261111c" alt="" width="3836" height="3836" loading="lazy" decoding="async"></button>
             <div id="gallery-2" popover>
               
               <button class="btn btn--plain" popovertarget="gallery-2" popovertargetaction="hide" aria-label="Close image">
-                <img src="/assets/images/books/honesty/IMG_0835.jpg?v=20261102d" alt="" width="3836" height="3836" loading="eager" decoding="async">
+                <img src="/assets/images/books/honesty/IMG_0835.jpg?v=20261111c" alt="" width="3836" height="3836" loading="eager" decoding="async">
               </button>
               
             </div>
           </div>
           
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="gallery-3" aria-label="View larger image 3 of 5"><img src="/assets/images/books/honesty/IMG_0837.jpg?v=20261102d" alt="" width="5198" height="3899" loading="lazy" decoding="async"></button>
+            <button class="btn btn--plain" popovertarget="gallery-3" aria-label="View larger image 3 of 5"><img src="/assets/images/books/honesty/IMG_0837.jpg?v=20261111c" alt="" width="5198" height="3899" loading="lazy" decoding="async"></button>
             <div id="gallery-3" popover>
               
               <button class="btn btn--plain" popovertarget="gallery-3" popovertargetaction="hide" aria-label="Close image">
-                <img src="/assets/images/books/honesty/IMG_0837.jpg?v=20261102d" alt="" width="5198" height="3899" loading="eager" decoding="async">
+                <img src="/assets/images/books/honesty/IMG_0837.jpg?v=20261111c" alt="" width="5198" height="3899" loading="eager" decoding="async">
               </button>
               
             </div>
           </div>
           
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="gallery-4" aria-label="View larger image 4 of 5"><img src="/assets/images/books/honesty/IMG_0838.jpg?v=20261102d" alt="" width="5319" height="3989" loading="lazy" decoding="async"></button>
+            <button class="btn btn--plain" popovertarget="gallery-4" aria-label="View larger image 4 of 5"><img src="/assets/images/books/honesty/IMG_0838.jpg?v=20261111c" alt="" width="5319" height="3989" loading="lazy" decoding="async"></button>
             <div id="gallery-4" popover>
               
               <button class="btn btn--plain" popovertarget="gallery-4" popovertargetaction="hide" aria-label="Close image">
-                <img src="/assets/images/books/honesty/IMG_0838.jpg?v=20261102d" alt="" width="5319" height="3989" loading="eager" decoding="async">
+                <img src="/assets/images/books/honesty/IMG_0838.jpg?v=20261111c" alt="" width="5319" height="3989" loading="eager" decoding="async">
               </button>
               
             </div>
           </div>
           
           <div class="book__gallery-item">
-            <button class="btn btn--plain" popovertarget="gallery-5" aria-label="View larger image 5 of 5"><img src="/assets/images/books/honesty/IMG_0840.jpg?v=20261102d" alt="" width="3744" height="2808" loading="lazy" decoding="async"></button>
+            <button class="btn btn--plain" popovertarget="gallery-5" aria-label="View larger image 5 of 5"><img src="/assets/images/books/honesty/IMG_0840.jpg?v=20261111c" alt="" width="3744" height="2808" loading="lazy" decoding="async"></button>
             <div id="gallery-5" popover>
               
               <button class="btn btn--plain" popovertarget="gallery-5" popovertargetaction="hide" aria-label="Close image">
-                <img src="/assets/images/books/honesty/IMG_0840.jpg?v=20261102d" alt="" width="3744" height="2808" loading="eager" decoding="async">
+                <img src="/assets/images/books/honesty/IMG_0840.jpg?v=20261111c" alt="" width="3744" height="2808" loading="eager" decoding="async">
               </button>
               
             </div>
@@ -261,6 +294,7 @@
       </div>
     </div>
   </div>
+  
   
   
   <section class="testimonials">
@@ -529,6 +563,9 @@
       <a href="/series/little-prince-martin/">Little Prince Martin Picture Books</a>
       <a href="/brandon-hale/">Author Brandon Hale</a>
       <a href="/jason-zimdars/">Illustrator Jason Zimdars</a>
+      <a href="/start-here/">Where to start</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
     </nav>
     <p>Copyright &copy; 2017–2026 Brandon Hale. All rights reserved.
       <a href="https://www.facebook.com/princemartinepic" title="Facebook">
