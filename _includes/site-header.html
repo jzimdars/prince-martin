@@ -1,0 +1,33 @@
+{%- comment -%}
+  Persistent compact site header with Start here and a Menu. Styled in header.css.
+  No JavaScript needed: the mobile menu is a native <details> disclosure.
+{%- endcomment -%}
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="{{ "/" | relative_url }}">
+      <img src="{{ "/assets/images/prince-martin-logo.svg" | relative_url }}" alt="Prince Martin" width="1280" height="624">
+    </a>
+    <nav class="site-header__nav" aria-label="Main">
+      <a href="{{ "/#start" | relative_url }}">Books</a>
+      <a href="{{ "/series/prince-martin-epic/" | relative_url }}">The Epic</a>
+      <a href="{{ "/series/little-prince-martin/" | relative_url }}">Picture Books</a>
+      <a href="{{ "/brandon-hale/" | relative_url }}">About</a>
+      <a href="{{ "/faq/" | relative_url }}">FAQ</a>
+    </nav>
+    <a class="btn site-header__cta" href="{{ "/start-here/" | relative_url }}">Start here</a>
+    <details class="site-header__menu">
+      <summary class="btn"><span class="site-header__menu-icon" aria-hidden="true"></span>Menu</summary>
+      <nav class="site-header__panel" aria-label="Menu">
+        <a href="{{ "/start-here/" | relative_url }}">Where to start</a>
+        <a href="{{ "/#start" | relative_url }}">All books</a>
+        <a href="{{ "/series/prince-martin-epic/" | relative_url }}">The Prince Martin Epic</a>
+        <a href="{{ "/series/little-prince-martin/" | relative_url }}">Little Prince Martin Picture Books</a>
+        <a href="{{ "/products/the-prince-martin-epic-coloring-book/" | relative_url }}">Coloring Book</a>
+        <a href="{{ "/brandon-hale/" | relative_url }}">Author Brandon Hale</a>
+        <a href="{{ "/jason-zimdars/" | relative_url }}">Illustrator Jason Zimdars</a>
+        <a href="{{ "/faq/" | relative_url }}">FAQ</a>
+        <a href="{{ "/contact/" | relative_url }}">Contact</a>
+      </nav>
+    </details>
+  </div>
+</header>

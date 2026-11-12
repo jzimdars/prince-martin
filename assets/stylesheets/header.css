@@ -1,0 +1,105 @@
+/* Persistent compact site header with Start here + Menu. */
+@layer modules {
+  :root { --header-height: 3.25rem; }
+
+  .site-header {
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    backdrop-filter: saturate(1.4) blur(10px);
+    background: oklch(var(--lch-brand-hero-dark) / 0.94);
+    border-block-end: 3px solid var(--color-brand-gold);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: var(--text-small);
+    inset-block-start: 0;
+    position: sticky;
+    z-index: 50;
+
+    a { color: inherit; text-decoration: none; }
+  }
+
+  .site-header__inner {
+    align-items: center;
+    display: flex;
+    gap: 0.6rem;
+    margin-inline: auto;
+    max-inline-size: var(--main-inline-size);
+    min-block-size: var(--header-height);
+    padding: 0.4rem clamp(1rem, 4vw, 3rem);
+    padding-inline: max(clamp(1rem, 4vw, 3rem), env(safe-area-inset-left));
+  }
+
+  .site-header__brand {
+    display: block;
+    flex: none;
+    img { block-size: 2.1rem; filter: brightness(0) invert(1); inline-size: auto; }
+  }
+
+  .site-header__nav {
+    display: none;
+    gap: 0.25rem 1.4rem;
+    margin-inline-start: auto;
+    a { font-weight: 600; opacity: 0.88; padding-block: 0.4rem; white-space: nowrap; }
+    a:hover, a:focus-visible { opacity: 1; text-decoration: underline; text-underline-offset: 0.3em; }
+  }
+
+  .site-header__cta {
+    --btn-background: var(--color-brand-gold);
+    --btn-border-color: var(--color-brand-gold);
+    --btn-color: var(--color-brand-hero-dark);
+    --btn-padding: 0.4em 1em;
+    flex: none;
+    margin-inline-start: auto;
+    white-space: nowrap;
+  }
+
+  .site-header__nav + .site-header__cta { margin-inline-start: 0; }
+
+  .site-header__menu {
+    position: static;
+    summary {
+      --btn-background: transparent;
+      --btn-border-color: oklch(var(--lch-white) / 0.45);
+      --btn-color: var(--color-white);
+      --btn-padding: 0.4em 0.9em;
+      list-style: none;
+      &::-webkit-details-marker { display: none; }
+    }
+    &[open] summary { --btn-background: oklch(var(--lch-white) / 0.14); }
+  }
+
+  .site-header__menu-icon {
+    block-size: 0.7rem;
+    border-block: 2px solid currentColor;
+    display: inline-block;
+    inline-size: 0.95rem;
+    position: relative;
+    &::after { border-block-start: 2px solid currentColor; content: ""; inset: calc(50% - 1px) 0 auto; position: absolute; }
+  }
+
+  .site-header__panel {
+    background: var(--color-brand-hero-dark);
+    border-block-start: 3px solid var(--color-brand-gold);
+    box-shadow: 0 12px 24px oklch(var(--lch-black) / 0.35);
+    display: grid;
+    inset: 100% 0 auto 0;
+    max-block-size: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    padding: var(--space-half) 0 var(--space);
+    position: absolute;
+
+    a { border-block-end: 1px solid oklch(var(--lch-white) / 0.1); font-size: var(--text-medium); font-weight: 600; padding: 0.8rem clamp(1rem, 4vw, 3rem); }
+    a:first-child { color: var(--color-brand-gold); }
+  }
+
+  @media (min-width: 64em) {
+    .site-header__nav { display: flex; }
+    .site-header__menu { display: none; }
+  }
+
+  /* Keep the book page's sticky buy bar below the header */
+  .book__actions { inset-block-start: var(--header-height); }
+  :where(h1, h2, h3, [id]) { scroll-margin-block-start: calc(var(--header-height) + 0.5rem); }
+
+  /* drop the hero's gold rule right under the header so there's one gold line, not two */
+  .site-header + main > .hero:first-child { border-block-start: 0; }
+}
