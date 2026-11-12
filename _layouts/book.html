@@ -13,7 +13,9 @@ layout: default
               "/series/prince-martin-epic/": "The Prince Martin Epic",
               "/series/little-prince-martin/": "Little Prince Martin Picture Books",
               "/brandon-hale/": "Brandon Hale",
-              "/jason-zimdars/": "Jason Zimdars"
+              "/jason-zimdars/": "Jason Zimdars",
+              "/start-here/": "Where to start",
+              "/faq/": "FAQ"
             };
             var ref;
             try { ref = document.referrer ? new URL(document.referrer) : null; } catch (e) { ref = null; }
@@ -153,6 +155,7 @@ layout: default
       </div>
     </div>
   </div>
+  {% if page.trailer %}{% include trailer.html title="See the adventure begin" %}{% endif %}
   {% assign page_reviews = site.data.reviews[page.review_key] %}
   {% if page_reviews and page_reviews.size > 0 %}
   <section class="testimonials">
