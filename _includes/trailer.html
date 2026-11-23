@@ -1,19 +1,76 @@
 {%- comment -%}
-  Self-hosted Prince Martin Epic trailer (no third-party player).
-  Params: id (heading id, default "trailer-title"), kicker, title (optional overrides).
-  Used on the home page, the Epic series page and the Book 1 page.
+  Self-hosted series trailer (no third-party player).
+  Without variants, this is the Epic v4 trailer (home page and Book 1).
+  With include.test and include.variants, the first variant is the no-JS default;
+  visitors with JavaScript are assigned one variant at random and kept on it
+  via localStorage (no cookies). Used for A/B tests on the two series pages only.
+  Params: id, kicker, title, download_label, test, variants.
 {%- endcomment -%}
 {%- assign asset_v = site.asset_version | default: "1" -%}
 {%- assign tr_id = include.id | default: "trailer-title" -%}
+{%- assign variants = include.variants -%}
+{%- if variants and variants.size > 0 -%}
+  {%- assign default_video = variants.first.video -%}
+  {%- assign default_poster = variants.first.poster -%}
+  {%- assign default_label = variants.first.label | default: "Video trailer" -%}
+{%- else -%}
+  {%- assign default_video = "/assets/videos/prince-martin-epic-trailer.mp4" -%}
+  {%- assign default_poster = "/assets/videos/prince-martin-epic-trailer-poster.jpg" -%}
+  {%- assign default_label = "The Prince Martin Epic video trailer" -%}
+{%- endif -%}
+{%- assign dl_label = include.download_label | default: "Download the Prince Martin Epic trailer" -%}
 <section class="trailer pad-inline" aria-labelledby="{{ tr_id }}">
     <div class="container">
       <p class="series__kicker">{{ include.kicker | default: "Watch the trailer" }}</p>
       <h2 class="series__title" id="{{ tr_id }}">{{ include.title | default: "Seven adventures. One young hero." }}</h2>
       <div class="trailer__frame">
-        <video class="trailer__video" controls playsinline preload="none" poster="{{ "/assets/videos/prince-martin-epic-trailer-poster.jpg" | relative_url }}?v={{ asset_v }}" width="1920" height="1080" aria-label="The Prince Martin Epic video trailer">
-          <source src="{{ "/assets/videos/prince-martin-epic-trailer.mp4" | relative_url }}?v={{ asset_v }}" type="video/mp4">
-          <a href="{{ "/assets/videos/prince-martin-epic-trailer.mp4" | relative_url }}">Download the Prince Martin Epic trailer</a>
+        <video class="trailer__video" controls playsinline preload="none" poster="{{ default_poster | relative_url }}?v={{ asset_v }}" width="1920" height="1080" aria-label="{{ default_label | escape }}"{% if include.test %} data-video-ab="{{ include.test }}" data-asset-v="{{ asset_v }}"{% endif %}>
+          <source src="{{ default_video | relative_url }}?v={{ asset_v }}" type="video/mp4">
+          <a href="{{ default_video | relative_url }}">{{ dl_label }}</a>
         </video>
+        {%- if include.test and variants and variants.size > 0 -%}
+        <script type="application/json" class="js-video-ab-variants">{{ variants | jsonify }}</script>
+        <script>
+        (function () {
+          var frame = document.currentScript.parentElement;
+          var video = frame.querySelector("video");
+          var dataEl = frame.querySelector(".js-video-ab-variants");
+          if (!video || !dataEl) return;
+          var variants;
+          try { variants = JSON.parse(dataEl.textContent); } catch (e) { return; }
+          if (!variants || !variants.length) return;
+          var test = video.getAttribute("data-video-ab");
+          var key = "pm-video-ab:" + test;
+          var stored = null;
+          try { stored = localStorage.getItem(key); } catch (e) {}
+          var chosen = null;
+          for (var i = 0; i < variants.length; i++) {
+            if (variants[i].id === stored) { chosen = variants[i]; break; }
+          }
+          if (!chosen) {
+            chosen = variants[Math.floor(Math.random() * variants.length)];
+            try { localStorage.setItem(key, chosen.id); } catch (e) {}
+          }
+          video.setAttribute("data-variant", chosen.id);
+          var ver = video.getAttribute("data-asset-v") || "";
+          var q = ver ? ("?v=" + encodeURIComponent(ver)) : "";
+          var source = video.querySelector("source");
+          var nextSrc = chosen.video + q;
+          var currentSrc = source ? (source.getAttribute("src") || "") : "";
+          if (source && currentSrc !== nextSrc) {
+            source.setAttribute("src", nextSrc);
+            video.setAttribute("poster", chosen.poster + q);
+            if (chosen.label) video.setAttribute("aria-label", chosen.label);
+            var dl = video.querySelector("a");
+            if (dl) dl.setAttribute("href", chosen.video);
+            video.load();
+          }
+        })();
+        </script>
+        {%- endif -%}
       </div>
     </div>
   </section>
+{%- if include.test -%}
+<script src="{{ "/assets/javascripts/video-ab.js" | relative_url }}?v={{ asset_v }}" defer></script>
+{%- endif -%}

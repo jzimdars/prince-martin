@@ -4,6 +4,15 @@ title: "Little Prince Martin Picture Books for Ages 3–7 by Brandon Hale"
 description: "Little Prince Martin is a picture book prequel series to the Prince Martin Epic, for younger readers ages 3–7, with playful rhymes, bold artwork, and brave hearts."
 series: picture
 og_image: /assets/images/books/covers/honesty-pays-a-little-prince-martin-picture-book-900.jpg
+video_ab:
+  - id: promo-1
+    video: /assets/videos/little-prince-martin-promo-1.mp4
+    poster: /assets/videos/little-prince-martin-promo-1-poster.jpg
+    label: The Little Prince Martin picture book series trailer
+  - id: promo-2
+    video: /assets/videos/little-prince-martin-promo-2.mp4
+    poster: /assets/videos/little-prince-martin-promo-2-poster.jpg
+    label: The Little Prince Martin picture book series trailer
 ---
 <article class="series-page" style="--color-accent: var(--color-purple);">
   <header class="series-page__header">
@@ -13,6 +22,7 @@ og_image: /assets/images/books/covers/honesty-pays-a-little-prince-martin-pictur
     <p class="series-page__meta">By <a href="{{ "/brandon-hale/" | relative_url }}">Brandon Hale</a> · Illustrated by <a href="{{ "/jason-zimdars/" | relative_url }}">Jason Zimdars</a> · Ages 3–7</p>
   </header>
   {% include book-grid.html series="picture" ctx="series" width="220px" %}
+  {% include trailer.html test="picture" variants=page.video_ab title="Three picture books. One brave heart." download_label="Download the Little Prince Martin trailer" %}
   <section class="prose">
     <h2>The books</h2>
     {% include series-books-list.html series="picture" %}

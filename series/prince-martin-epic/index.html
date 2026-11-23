@@ -4,6 +4,15 @@ title: "The Prince Martin Epic: a 7-Book Illustrated Chapter Book Series for Boy
 description: "The Prince Martin Epic is a 7-book series of illustrated, rhyming chapter books for boys by Brandon Hale, illustrated by Jason Zimdars. Ages 6+ (Book 1) to 10+ (Book 7)."
 series: epic
 og_image: /assets/images/books/covers/prince-martin-wins-his-sword-900.jpg
+video_ab:
+  - id: v4
+    video: /assets/videos/prince-martin-epic-trailer.mp4
+    poster: /assets/videos/prince-martin-epic-trailer-poster.jpg
+    label: The Prince Martin Epic video trailer
+  - id: em-v2
+    video: /assets/videos/prince-martin-epic-ad-em-v2.mp4
+    poster: /assets/videos/prince-martin-epic-ad-em-v2-poster.jpg
+    label: The Prince Martin Epic video trailer
 ---
 <article class="series-page">
   <header class="series-page__header">
@@ -13,7 +22,7 @@ og_image: /assets/images/books/covers/prince-martin-wins-his-sword-900.jpg
     <p class="series-page__meta">By <a href="{{ "/brandon-hale/" | relative_url }}">Brandon Hale</a> · Illustrated by <a href="{{ "/jason-zimdars/" | relative_url }}">Jason Zimdars</a> · Ages 6+ (Book 1) to 10+ (Book 7)</p>
   </header>
   {% include book-grid.html series="epic" ctx="series" width="180px" %}
-  {% include trailer.html %}
+  {% include trailer.html test="epic" variants=page.video_ab %}
   <section class="prose">
     <h2 id="reading-order">Reading order</h2>
     <p>Brandon’s books in the Prince Martin Epic series can be read in order or as stand-alones. The series grows with your son: each successive book gets longer and the plot more action-packed! New to Prince Martin? See <a href="{{ "/start-here/" | relative_url }}">where to start</a> or read the <a href="{{ "/faq/" | relative_url }}">FAQ</a>.</p>
