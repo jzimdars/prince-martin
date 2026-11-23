@@ -2,6 +2,8 @@
   GoatCounter analytics (cookieless, privacy-friendly). count.js ignores localhost.
   Outbound buy/retailer clicks are tracked via data-goatcounter-click attributes in
   _layouts/book.html, which count.js binds automatically.
+  Series-page trailer A/B tests fire events from assets/javascripts/video-ab.js
+  with paths like video-ab/epic/v4/play (see that file and the PR notes).
 {%- endcomment %}
 <script data-goatcounter="https://princemartin.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
